@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
-    public float speed = 5.0f;
+    public float speed = 0.5f;
     public float mouseSensitivity = 300.0f;
     public float jumpForce = 500.0f;
     public float gravityModifyer = 2;
@@ -13,12 +13,18 @@ public class Controller : MonoBehaviour
     public bool isGrounded = true;
     public bool isGameOver = false;
     public Rigidbody playerRb;
+    public Rigidbody robotRb;
+    public bool playerControl;
+    public bool robotControl;
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();
+        playerRb = GameObject.Find("Player").GetComponent<Rigidbody>();
+        robotRb = GameObject.Find("Robot").GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifyer;
         Cursor.lockState = CursorLockMode.Locked;
+        playerControl = true;
+        robotControl = false;
     }
 
     // Update is called once per frame
@@ -26,23 +32,20 @@ public class Controller : MonoBehaviour
     {
         if (!isGameOver)
         {
-            float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-
-            playerRb.transform.Rotate(Vector3.up * mouseX * 2);
-
-            if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+            if (Input.GetKeyDown(KeyCode.C))
             {
-                playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-                isGrounded = false;
+                playerControl = !playerControl; 
+                robotControl = !robotControl;
             }
 
-            if (Input.GetKey(KeyCode.W)) { transform.Translate(Vector3.forward * Time.deltaTime * speed); }
-
-            if (Input.GetKey(KeyCode.S)) { transform.Translate(Vector3.back * Time.deltaTime * speed); }
-
-            if (Input.GetKey(KeyCode.A)) { transform.Translate(Vector3.left * Time.deltaTime * speed); }
-
-            if (Input.GetKey(KeyCode.D)) { transform.Translate(Vector3.right * Time.deltaTime * speed); }
+            if (playerControl)
+            {
+                ControlPlayer();
+            }
+            else if (robotControl)
+            {
+                ControlRobot();
+            }
         }
     }
 
@@ -53,5 +56,47 @@ public class Controller : MonoBehaviour
         {
             isGrounded = true;
         }
+    }
+
+    private void ControlPlayer()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+
+        playerRb.transform.Rotate(Vector3.up * mouseX * 2);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+
+        if (Input.GetKey(KeyCode.W)) { playerRb.transform.Translate(Vector3.forward * Time.deltaTime * speed); }
+
+        if (Input.GetKey(KeyCode.S)) { playerRb.transform.Translate(Vector3.back * Time.deltaTime * speed); }
+
+        if (Input.GetKey(KeyCode.A)) { playerRb.transform.Translate(Vector3.left * Time.deltaTime * speed); }
+
+        if (Input.GetKey(KeyCode.D)) { playerRb.transform.Translate(Vector3.right * Time.deltaTime * speed); }
+    }
+
+    private void ControlRobot()
+    {
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+
+        robotRb.transform.Rotate(Vector3.up * mouseX * 2);
+
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            robotRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+
+        if (Input.GetKey(KeyCode.W)) { robotRb.transform.Translate(Vector3.forward * Time.deltaTime * speed); }
+
+        if (Input.GetKey(KeyCode.S)) { robotRb.transform.Translate(Vector3.back * Time.deltaTime * speed); }
+
+        if (Input.GetKey(KeyCode.A)) { robotRb.transform.Translate(Vector3.left * Time.deltaTime * speed); }
+
+        if (Input.GetKey(KeyCode.D)) { robotRb.transform.Translate(Vector3.right * Time.deltaTime * speed); }
     }
 }
