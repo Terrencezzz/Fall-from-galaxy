@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Controller : MonoBehaviour
 {
-    public float speed = 0.5f;
+    public float speed = 2.0f;
     public float mouseSensitivity = 300.0f;
     public float jumpForce = 500.0f;
     public float gravityModifyer = 2;
@@ -16,6 +16,7 @@ public class Controller : MonoBehaviour
     public Rigidbody robotRb;
     public bool playerControl;
     public bool robotControl;
+    public bool running;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,10 +33,16 @@ public class Controller : MonoBehaviour
     {
         if (!isGameOver)
         {
+            speed = 2.0f;
             if (Input.GetKeyDown(KeyCode.C))
             {
                 playerControl = !playerControl; 
                 robotControl = !robotControl;
+            }
+
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                speed = 4.0f;
             }
 
             if (playerControl)
