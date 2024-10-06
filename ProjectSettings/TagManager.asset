@@ -6,11 +6,17 @@ TagManager:
   tags:
   - Ground
   - Robot
+  - Weapon
+  - SecondCamera
+  - BulletSpawn
+  - LevelPart
+  - Dummie
+  - Interactable
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Interactable
   - Water
   - UI
   - 

@@ -1,26 +1,98 @@
 ﻿using UnityEngine;
 using System.Collections;
+using TMPro;
+using UnityEngine.UI;
 
 
 public class MouseLookScript : MonoBehaviour {
 
-	[HideInInspector]
+
+    [Header("Interaction")]
+    public float interactDistance = 3f;
+    public LayerMask interactLayer;
+    public GameObject interactPrompt; // UI element for "E to read note"
+    public GameObject noteOverlay; // UI panel to display the note content
+    public TextMeshProUGUI noteText; // UI Text to display the note content
+
+    private Note currentNote;
+    private bool isReadingNote = false;
+
+    [HideInInspector]
 	public Transform myCamera;
 	/*
 	 * Hiding the cursor.
 	 */
-	void Awake(){
+	void Awake()
+	{
 		Cursor.lockState = CursorLockMode.Locked;
 		myCamera = GameObject.FindGameObjectWithTag("MainCamera").transform;
 	}
 
-	/*
+    void DetectInteractable()
+    {
+        Ray ray = new Ray(myCamera.position, myCamera.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactDistance, interactLayer))
+        {
+            Note note = hit.collider.GetComponent<Note>();
+            if (note != null)
+            {
+                currentNote = note;
+                interactPrompt.SetActive(true);
+                return;
+            }
+        }
+
+        currentNote = null;
+        interactPrompt.SetActive(false);
+    }
+
+    void HandleInteractionInput()
+    {
+        if (currentNote != null && Input.GetKeyDown(KeyCode.E))
+        {
+            OpenNote();
+        }
+    }
+
+    void OpenNote()
+    {
+        isReadingNote = true;
+        noteOverlay.SetActive(true);
+        noteText.text = currentNote.GetNoteContent();
+        interactPrompt.SetActive(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void CloseNote()
+    {
+        isReadingNote = false;
+        noteOverlay.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+    }
+
+    /*
 	* Locking the mouse if pressing L.
 	* Triggering the headbob camera omvement if player is faster than 1 of speed
 	*/
-	void  Update(){
-
-		MouseInputMovement();
+    void Update()
+    {
+        if (!isReadingNote)
+        {
+            DetectInteractable();
+            HandleInteractionInput();
+            MouseInputMovement();
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                CloseNote();
+            }
+        }
 
 		if (Input.GetKeyDown (KeyCode.L)) {
 			Cursor.lockState = CursorLockMode.Locked;
@@ -82,7 +154,10 @@ void FixedUpdate(){
 	}
 
 
-	ApplyingStuff();
+        if (!isReadingNote)
+        {
+            ApplyingStuff();
+        }
 
 
 }
@@ -168,10 +243,11 @@ void WeaponRotation(){
 float deltaTime = 0.0f;
 [Tooltip("Shows FPS in top left corner.")]
 public bool showFps = true;
-/*
+
+    /*
 * Shows fps if its set to true.
 */
-void OnGUI(){
+    void OnGUI(){
 
 	if(showFps){
 		FPSCounter();
