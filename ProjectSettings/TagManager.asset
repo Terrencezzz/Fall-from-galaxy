@@ -12,6 +12,7 @@ TagManager:
   - LevelPart
   - Dummie
   - Interactable
+  - Enemy
   layers:
   - Default
   - TransparentFX
