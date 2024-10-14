@@ -9664,13 +9664,13 @@ Transform:
   - {fileID: 1699462565}
   - {fileID: 1761450336}
   - {fileID: 189406117}
-  - {fileID: 1650160697}
   - {fileID: 1232097497}
   - {fileID: 1566145347}
   - {fileID: 2120445632}
   - {fileID: 1982575972}
   - {fileID: 399535549}
   - {fileID: 50598835}
+  - {fileID: 1939518541}
   m_Father: {fileID: 1824736933}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &608622581
@@ -19087,6 +19087,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -24376,7 +24380,7 @@ MonoBehaviour:
   fireRate: 0.1
   fpsCam: {fileID: 1313696321}
   bulletHolePrefab: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
-  shootingSound: {fileID: 1659745489}
+  shootingSound: {fileID: 0}
 --- !u!1001 &1699462564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27726,6 +27730,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
   m_PrefabInstance: {fileID: 1938999731}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1939518541 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8250113047921840432, guid: b76f846b3379607468a593969b575654, type: 3}
+  m_PrefabInstance: {fileID: 1616282285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1953274939
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30384,26 +30393,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 347292889}
   - {fileID: 1295964429}
-  - {fileID: 1073850194}
-  - {fileID: 1251096326}
-  - {fileID: 579796417}
-  - {fileID: 1364251098}
-  - {fileID: 878853777}
-  - {fileID: 425440871}
-  - {fileID: 688503949}
-  - {fileID: 1603184779}
-  - {fileID: 431632177}
-  - {fileID: 1787514166}
-  - {fileID: 1531291289}
-  - {fileID: 1468612200}
-  - {fileID: 1109740092}
-  - {fileID: 1325477499}
-  - {fileID: 485352939}
-  - {fileID: 998330312}
-  - {fileID: 1616282285}
-  - {fileID: 655351542}
-  - {fileID: 808091589}
-  - {fileID: 1814096609}
-  - {fileID: 707638892}
-  - {fileID: 1339755811}
-  - {fileID: 1906687598}
+  - {fileID: 195348961}
+  - {fileID: 1824736933}
+  - {fileID: 2053376811}
