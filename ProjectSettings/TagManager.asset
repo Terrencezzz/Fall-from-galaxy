@@ -13,6 +13,9 @@ TagManager:
   - Dummie
   - Interactable
   - Enemy
+  - autoGun
+  - semiGun
+  - hole
   layers:
   - Default
   - TransparentFX
