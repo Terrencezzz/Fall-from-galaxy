@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     [Tooltip("Intensity of all lights in the scene (excluding flashlights)")]
     [Range(0f, 8f)]
-    public float sceneLightIntensity = 0.5f;
+    public float sceneLightIntensity = 0f;
 
     [Tooltip("Intensity of the characters' flashlights")]
     [Range(0f, 8f)]
