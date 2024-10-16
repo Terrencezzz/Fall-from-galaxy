@@ -16,6 +16,7 @@ TagManager:
   - autoGun
   - semiGun
   - hole
+  - Next
   layers:
   - Default
   - TransparentFX
