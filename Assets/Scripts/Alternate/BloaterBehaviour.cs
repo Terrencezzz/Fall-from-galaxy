@@ -19,6 +19,9 @@ public class BloaterBehaviour : MonoBehaviour
     private Vector3 lastPosition;
     private float animationSpeed;
 
+    // Enemy statistics 
+    private float health;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +47,16 @@ public class BloaterBehaviour : MonoBehaviour
         // Navigation code
         if (followPlayer) {
             agent.destination = player.transform.position;
+            float distance = Vector3.Distance(transform.position, player.transform.position);
+            // Attack player if within 3 units 
+            if (distance < 3f) {
+                // insert code here to reduce players' health 
+                animator.SetBool("Attack", true);
+            } else {
+                animator.SetBool("Attack", false);
+            }
         } else {
+            // If player not in range, continue patrol
             agent.destination = targetVector;
             float distance = Vector3.Distance(transform.position, targetVector);
             if (distance < 1f) {
