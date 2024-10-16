@@ -2008,20 +2008,23 @@ MonoBehaviour:
   textFileName: Log1.txt
   noteContent: 'Researcher: Dr. Gallow
 
-    
-
-    Sample 887-3387: Sewing patterns
-    for a soft toy elephant, drawn to have a trunk that splits into three halfway
-    along its length. Elephant has no tusks and prominent udders.
+    Next Gen Labs Identification Number:
+    948375
 
     
 
-    Sample
-    887-3391: One page, apparently from a script for a Bobble the Clown TV show.
-    Bobble is demonstrating how to ''catch some more'' cyclists by stringing wires
-    across cycle trails. Handwriting is extremely florid and includes a border of
-    loops and smiley faces around the page. Show not intercepted by the Foundation,
-    though tone is a good match for known episodes.'
+    Sample 887-3387: Sewing patterns for a soft toy elephant,
+    drawn to have a trunk that splits into three halfway along its length. Elephant
+    has no tusks and prominent udders.
+
+    
+
+    Sample 887-3391: One page, apparently
+    from a script for a Bobble the Clown TV show. Bobble is demonstrating how to
+    ''catch some more'' cyclists by stringing wires across cycle trails. Handwriting
+    is extremely florid and includes a border of loops and smiley faces around the
+    page. Show not intercepted by the Foundation, though tone is a good match for
+    known episodes.'
 --- !u!1001 &528959068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2857,7 +2860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246475828207725030, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Intensity
-      value: 1.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7920338690917894093, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Enabled
@@ -7548,10 +7551,10 @@ MonoBehaviour:
   - {fileID: 1670122196}
   - {fileID: 970351191}
   ambientLightColor: {r: 0, g: 0, b: 0, a: 0}
-  skyboxMaterial: {fileID: 0}
-  useSkybox: 1
+  skyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  useSkybox: 0
   sceneLightIntensity: 0
-  flashlightIntensity: 1.98
+  flashlightIntensity: 1
 --- !u!4 &2042610864
 Transform:
   m_ObjectHideFlags: 0
@@ -7745,7 +7748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611689207371090990, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Intensity
-      value: 1.98
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Name
