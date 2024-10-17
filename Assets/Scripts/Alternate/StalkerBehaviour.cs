@@ -42,6 +42,12 @@ public class StalkerBehaviour : MonoBehaviour, EnemyDamage
             Die();
             animator.SetBool("Dead", true);
         } else {
+
+            // If you want enemy to stand still, set 'IDLE' to true
+            if (animator.GetBool("Idle")) {
+                agent.isStopped = true;
+            }
+
             // Calculate speed for animation purposes
             float actualSpeed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
             animationSpeed = actualSpeed / speed;
@@ -63,7 +69,6 @@ public class StalkerBehaviour : MonoBehaviour, EnemyDamage
                         agent.isStopped = true;
                         animator.SetTrigger("Attack");
                         StartCoroutine(Wait());
-                        playerController.TakeDamage(10);
                     }
                 } 
             } else {
@@ -97,7 +102,7 @@ public class StalkerBehaviour : MonoBehaviour, EnemyDamage
         // Stop navmesh
         agent.isStopped = true;
         speed = 0;
-        // Stop physics interactions 
+        // Stop physics interactions
         Rigidbody rb = GetComponent<Rigidbody>();
         if (rb != null) {
             rb.isKinematic = true; 
@@ -109,6 +114,10 @@ public class StalkerBehaviour : MonoBehaviour, EnemyDamage
     // Basic wait coroutine
     IEnumerator Wait() {
         yield return new WaitForSeconds(2);
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance < 3f) {
+            playerController.TakeDamage(10);
+        }
         agent.isStopped = false;
     }
 }
