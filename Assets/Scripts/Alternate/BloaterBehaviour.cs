@@ -63,7 +63,6 @@ public class BloaterBehaviour : MonoBehaviour, EnemyDamage
                         agent.isStopped = true;
                         animator.SetTrigger("Attack");
                         StartCoroutine(Wait());
-                        playerController.TakeDamage(5);
                     }
                 } 
             } else {
@@ -102,13 +101,17 @@ public class BloaterBehaviour : MonoBehaviour, EnemyDamage
         if (rb != null) {
             rb.isKinematic = true; 
         }
-        // Stop collisions
+        // Stop collisi
         GetComponent<Collider>().enabled = false;
     }
 
     // Basic wait coroutine
     IEnumerator Wait() {
         yield return new WaitForSeconds(2);
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance < 3f) {
+            playerController.TakeDamage(5);
+        }
         agent.isStopped = false;
     }
 }

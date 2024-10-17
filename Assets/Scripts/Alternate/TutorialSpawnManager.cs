@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class TutorialSpawnManager : MonoBehaviour
 {
     public GameObject bloaterPrefab; // bloaters are fat and slow. Conversely, they deal and can take significant damage
     public GameObject stalkerPrefab; // stalkers are quiet and more persistent. they have larger 'patrol' areas and search for the player more thoroughly given their last location 
@@ -15,8 +15,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnEnemy("bloater", new Vector3 (39,0,36), new Vector3 (39,0,28));
-        // SpawnEnemy("stalker", new Vector3 (13,-5.5f,81), new Vector3 (13,-5.5f,81));
+        SpawnEnemy("bloater", new Vector3 (13,0,33), new Vector3 (-9,4.5f,15));
+        SpawnEnemy("stalker", new Vector3 (13,-5.5f,81), new Vector3 (13,-5.5f,81));
     }
 
     // Update is called once per frame
