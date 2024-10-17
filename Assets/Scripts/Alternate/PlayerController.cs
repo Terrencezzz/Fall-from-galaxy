@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,9 +16,11 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
     private float gravity = -19.81f;
     private float yVelocity = 0f;
-
     // Player stats
     public int health = 100;
+    private bool isHand = true;
+    private bool stop = false;
+
 
     void Start()
     {
@@ -31,8 +34,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (stop)
+        {
+            return;
+        }
         MovePlayer();
         HandleFlashlight();
+        HandleHand();
     }
 
     void MovePlayer()
@@ -42,7 +50,7 @@ public class PlayerController : MonoBehaviour
         float moveZ = Input.GetAxis("Vertical");
 
         // Determine speed
-        bool isSprinting = Input.GetKey(KeyCode.LeftShift);
+        bool isSprinting = Input.GetKey(KeyCode.LeftShift) && isHand;
         float speed = isSprinting ? sprintSpeed : walkSpeed;
 
         // Calculate movement direction
@@ -68,12 +76,33 @@ public class PlayerController : MonoBehaviour
         controller.Move(move * Time.deltaTime);
     }
 
+    void HandleHand()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            isHand = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            isHand = false;
+        }
+    }
+
     void HandleFlashlight()
     {
         // Toggle flashlight with 'F' key
         if (Input.GetKeyDown(KeyCode.F))
         {
             flashlight.enabled = !flashlight.enabled;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Next"))
+        {
+            stop = true;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 

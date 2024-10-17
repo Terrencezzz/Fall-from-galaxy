@@ -1,5 +1,7 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 
 [ExecuteAlways] // Allows the script to run in edit mode
 public class GameManager : MonoBehaviour
@@ -7,171 +9,224 @@ public class GameManager : MonoBehaviour
     public List<GameObject> characters = new List<GameObject>();
     private int currentCharacterIndex = 0;
 
-    // Lighting settings
     [Header("Lighting Settings")]
-    public Color ambientLightColor = Color.black;
+    public bool useAmbientLight = true;
+    [ColorUsage(false, true)]
+    public Color ambientLightColor = Color.white;
+
     public Material skyboxMaterial;
     public bool useSkybox = true;
+    public bool useSkyboxAmbientLight = true;
+    [Range(0f, 8f)]
+    public float skyboxAmbientIntensity = 1.0f;
 
-    [Tooltip("Intensity of all lights in the scene (excluding flashlights)")]
     [Range(0f, 8f)]
     public float sceneLightIntensity = 0f;
-
-    [Tooltip("Intensity of the characters' flashlights")]
     [Range(0f, 8f)]
     public float flashlightIntensity = 1.0f;
 
+    public GameObject robotPrefab; // Robot prefab for spawning
+
+    [Header("Message UI")]
+    public Canvas messageCanvas;
+    public TextMeshProUGUI messageTextUI;
+
+    public static GameManager Instance;
+
+    void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
+
     void Start()
     {
-        // Apply lighting settings at the start of the game
         ApplyLightingSettings();
-
-        // Existing code to find and manage characters
-        PlayerController[] players = FindObjectsOfType<PlayerController>();
-        RobotController[] robots = FindObjectsOfType<RobotController>();
-
-        // Add them to the characters list
-        characters.Clear();
-        foreach (var player in players)
-        {
-            characters.Add(player.gameObject);
-        }
-
-        foreach (var robot in robots)
-        {
-            characters.Add(robot.gameObject);
-        }
-
-        // Disable control for all characters except the first one
-        for (int i = 0; i < characters.Count; i++)
-        {
-            if (i != currentCharacterIndex)
-            {
-                DisableControl(characters[i]);
-            }
-            else
-            {
-                EnableControl(characters[i]);
-            }
-        }
+        InitializeCharacters();
     }
 
     void OnValidate()
     {
-        // Apply lighting settings in the editor when values change
         ApplyLightingSettings();
-    }
-
-    void ApplyLightingSettings()
-    {
-        // Set ambient light
-        RenderSettings.ambientLight = ambientLightColor;
-
-        // Set or clear skybox
-        if (useSkybox && skyboxMaterial != null)
-        {
-            RenderSettings.skybox = skyboxMaterial;
-        }
-        else
-        {
-            RenderSettings.skybox = null;
-        }
-
-        // Adjust scene lights and flashlights
-        Light[] allLights = FindObjectsOfType<Light>();
-        foreach (Light light in allLights)
-        {
-            if (IsFlashlight(light))
-            {
-                light.intensity = flashlightIntensity;
-            }
-            else
-            {
-                light.intensity = sceneLightIntensity;
-            }
-        }
-    }
-
-    bool IsFlashlight(Light light)
-    {
-        // Check if the light is a flashlight attached to a character
-        foreach (GameObject character in characters)
-        {
-            Light flashlight = character.GetComponentInChildren<Light>();
-            if (flashlight == light)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 
     void Update()
     {
-        // Switch character with Tab key
         if (Input.GetKeyDown(KeyCode.Tab))
-        {
             SwitchCharacter();
+
+        if (Input.GetKeyDown(KeyCode.Q))
+            TrySpawnRobot();
+
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            useAmbientLight = !useAmbientLight;
+            ApplyLightingSettings();
+        }
+    }
+
+    void ApplyLightingSettings()
+    {
+        if (useAmbientLight)
+        {
+            RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
+            RenderSettings.ambientLight = ambientLightColor;
+        }
+        else if (useSkyboxAmbientLight && skyboxMaterial != null)
+        {
+            RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Skybox;
+            RenderSettings.ambientIntensity = skyboxAmbientIntensity;
+        }
+        else
+        {
+            RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
+            RenderSettings.ambientLight = Color.black;
+        }
+
+        RenderSettings.skybox = useSkybox ? skyboxMaterial : null;
+
+        Light[] allLights = FindObjectsOfType<Light>();
+        foreach (Light light in allLights)
+        {
+            light.intensity = IsFlashlight(light) ? flashlightIntensity : sceneLightIntensity;
+        }
+    }
+
+    void InitializeCharacters()
+    {
+        PlayerController[] players = FindObjectsOfType<PlayerController>();
+        RobotController[] robots = FindObjectsOfType<RobotController>();
+
+        characters.Clear();
+        characters.AddRange(System.Array.ConvertAll(players, p => p.gameObject));
+        characters.AddRange(System.Array.ConvertAll(robots, r => r.gameObject));
+
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (i == currentCharacterIndex)
+                EnableControl(characters[i]);
+            else
+                DisableControl(characters[i]);
         }
     }
 
     void SwitchCharacter()
     {
-        // Disable current character
         DisableControl(characters[currentCharacterIndex]);
-
-        // Increment index
         currentCharacterIndex = (currentCharacterIndex + 1) % characters.Count;
-
-        // Enable new character
         EnableControl(characters[currentCharacterIndex]);
     }
 
-    void DisableControl(GameObject character)
+    void TrySpawnRobot()
     {
-        // Disable control scripts
-        if (character.GetComponent<PlayerController>())
-            character.GetComponent<PlayerController>().enabled = false;
+        GameObject player = characters[currentCharacterIndex];
+        if (!player.CompareTag("Player") || !IsGroundFlat(player.transform.position))
+        {
+            Debug.Log("Cannot spawn robot here.");
+            return;
+        }
 
-        if (character.GetComponent<RobotController>())
-            character.GetComponent<RobotController>().enabled = false;
+        if (FindSpawnPosition(player.transform.position, out Vector3 spawnPosition))
+        {
+            GameObject newRobot = Instantiate(robotPrefab, spawnPosition, Quaternion.identity);
+            characters.Add(newRobot);
+        }
+        else
+        {
+            Debug.Log("No space to spawn robot.");
+        }
+    }
 
-        // Disable camera and audio listener
-        Camera cam = character.GetComponentInChildren<Camera>();
-        if (cam != null)
-            cam.enabled = false;
+    bool IsGroundFlat(Vector3 position)
+    {
+        if (Physics.Raycast(position, Vector3.down, out RaycastHit hit, 1f))
+            return Vector3.Angle(hit.normal, Vector3.up) < 5f;
+        return false;
+    }
 
-        AudioListener audioListener = character.GetComponentInChildren<AudioListener>();
-        if (audioListener != null)
-            audioListener.enabled = false;
+    bool FindSpawnPosition(Vector3 playerPosition, out Vector3 spawnPosition)
+    {
+        float spawnDistance = 1f;
+        for (int i = 0; i < 8; i++)
+        {
+            Vector3 direction = Quaternion.Euler(0, i * 45, 0) * Vector3.forward;
+            Vector3 checkPosition = playerPosition + direction * spawnDistance;
+            if (IsPositionSuitable(checkPosition))
+            {
+                spawnPosition = checkPosition;
+                return true;
+            }
+        }
+        spawnPosition = Vector3.zero;
+        return false;
+    }
 
-        // Disable MouseLook script
-        MouseLook mouseLook = character.GetComponentInChildren<MouseLook>();
-        if (mouseLook != null)
-            mouseLook.enabled = false;
+    bool IsPositionSuitable(Vector3 position)
+    {
+        if (!IsGroundFlat(position)) return false;
+        return Physics.OverlapSphere(position, 0.5f).Length == 0;
+    }
+
+    public void DisplayMessage(MessageTrigger messageTrigger)
+    {
+        messageTextUI.text = messageTrigger.messageText;
+        messageTextUI.color = messageTrigger.fontColor;
+        messageTextUI.fontSize = messageTrigger.fontSize;
+
+        RectTransform rectTransform = messageTextUI.GetComponent<RectTransform>();
+        rectTransform.anchorMin = messageTrigger.position;
+        rectTransform.anchorMax = messageTrigger.position;
+        rectTransform.anchoredPosition = Vector2.zero;
+
+        messageCanvas.enabled = true;
+        StartCoroutine(HideMessageAfterDelay(messageTrigger.displayDuration));
+    }
+
+    IEnumerator HideMessageAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        messageCanvas.enabled = false;
     }
 
     void EnableControl(GameObject character)
     {
-        // Enable control scripts
-        if (character.GetComponent<PlayerController>())
-            character.GetComponent<PlayerController>().enabled = true;
+        ToggleCharacterComponents(character, true);
+    }
 
-        if (character.GetComponent<RobotController>())
-            character.GetComponent<RobotController>().enabled = true;
+    void DisableControl(GameObject character)
+    {
+        ToggleCharacterComponents(character, false);
+    }
 
-        // Enable camera and audio listener
-        Camera cam = character.GetComponentInChildren<Camera>();
-        if (cam != null)
-            cam.enabled = true;
+    void ToggleCharacterComponents(GameObject character, bool isEnabled)
+    {
+        var animator = character.GetComponentInChildren<Animator>();
+        if (animator != null) animator.enabled = isEnabled;
 
-        AudioListener audioListener = character.GetComponentInChildren<AudioListener>();
-        if (audioListener != null)
-            audioListener.enabled = true;
+        var playerController = character.GetComponent<PlayerController>();
+        if (playerController != null) playerController.enabled = isEnabled;
 
-        // Enable MouseLook script
-        MouseLook mouseLook = character.GetComponentInChildren<MouseLook>();
-        if (mouseLook != null)
-            mouseLook.enabled = true;
+        var robotController = character.GetComponent<RobotController>();
+        if (robotController != null) robotController.enabled = isEnabled;
+
+        var cam = character.GetComponentInChildren<Camera>();
+        if (cam != null) cam.enabled = isEnabled;
+
+        var audioListener = character.GetComponentInChildren<AudioListener>();
+        if (audioListener != null) audioListener.enabled = isEnabled;
+
+        var mouseLook = character.GetComponentInChildren<MouseLook>();
+        if (mouseLook != null) mouseLook.enabled = isEnabled;
+    }
+
+    bool IsFlashlight(Light light)
+    {
+        foreach (var character in characters)
+        {
+            if (character.GetComponentInChildren<Light>() == light) return true;
+        }
+        return false;
     }
 }
