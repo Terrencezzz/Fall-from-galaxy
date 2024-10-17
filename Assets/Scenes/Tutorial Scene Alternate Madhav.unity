@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 0
+  m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -184,74 +184,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
   m_PrefabInstance: {fileID: 12675543}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &21513708
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 21513711}
-  - component: {fileID: 21513710}
-  - component: {fileID: 21513709}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &21513709
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21513708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
---- !u!114 &21513710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21513708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!4 &21513711
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21513708}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &50096453
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2006,25 +1938,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textFileName: Log1.txt
-  noteContent: 'Researcher: Dr. Gallow
-
-    Next Gen Labs Identification Number:
-    948375
-
-    
-
-    Sample 887-3387: Sewing patterns for a soft toy elephant,
-    drawn to have a trunk that splits into three halfway along its length. Elephant
-    has no tusks and prominent udders.
-
-    
-
-    Sample 887-3391: One page, apparently
-    from a script for a Bobble the Clown TV show. Bobble is demonstrating how to
-    ''catch some more'' cyclists by stringing wires across cycle trails. Handwriting
-    is extremely florid and includes a border of loops and smiley faces around the
-    page. Show not intercepted by the Foundation, though tone is a good match for
-    known episodes.'
+  noteContent: "**Researcher:** Dr. Samuel Hayes  \r\n**Identification Number:**
+    112358\r\n\r\n**Stardate:** 1/11/2208\r\n\r\nWe've finally received the biomass
+    samples from under the ice. Preliminary analysis shows an unusual resilience
+    to extreme conditions. The cells remain viable even after exposure to vacuum
+    and radiation. I have a feeling we're on the cusp of something extraordinary.\r\n\r\n**Stardate:**
+    5/11/2208\r\n\r\nCulturing the biomass has proven more difficult than anticipated.
+    It seems to require a unique combination of amino acids not found in standard
+    media. Dr. Pearch suggests we try synthesizing a custom growth medium. Her enthusiasm
+    is contagious.\r\n\r\n**Stardate:** 10/11/2208\r\n\r\nSuccess! The biomass is
+    growing, and rapidly at that. Under the microscope, the cellular structures are
+    unlike anything documented. They seem to adapt their morphology in response to
+    stimuli. This could redefine our understanding of life itself."
 --- !u!1001 &528959068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2814,6 +2739,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1500985980058146719, guid: c476b11004b957f4da361250f9b88405, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1725224681725272407, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -7550,11 +7479,17 @@ MonoBehaviour:
   characters:
   - {fileID: 1670122196}
   - {fileID: 970351191}
+  useAmbientLight: 1
   ambientLightColor: {r: 0, g: 0, b: 0, a: 0}
   skyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
   useSkybox: 0
+  useSkyboxAmbientLight: 1
+  skyboxAmbientIntensity: 1
   sceneLightIntensity: 0
   flashlightIntensity: 1
+  robotPrefab: {fileID: 0}
+  messageCanvas: {fileID: 283789222}
+  messageTextUI: {fileID: 353493860}
 --- !u!4 &2042610864
 Transform:
   m_ObjectHideFlags: 0
@@ -8083,6 +8018,5 @@ SceneRoots:
   - {fileID: 2086745231}
   - {fileID: 502681039}
   - {fileID: 283789223}
-  - {fileID: 21513711}
   - {fileID: 2042610864}
   - {fileID: 837205143}

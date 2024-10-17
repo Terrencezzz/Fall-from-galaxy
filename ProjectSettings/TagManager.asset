@@ -17,6 +17,7 @@ TagManager:
   - semiGun
   - hole
   - Next
+  - Message
   layers:
   - Default
   - TransparentFX
