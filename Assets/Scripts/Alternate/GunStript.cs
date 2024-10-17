@@ -75,10 +75,16 @@ public class GunStript : MonoBehaviour
         {
 
             Debug.Log(hit.transform.name);
-
+            // Hit objects with bullets
             if (hit.collider != null)
-            {
-                SpawnBulletHole(hit);
+            {   
+                // If object is enemy, reduce health, DO NOT spawn bulletholes 
+                if (hit.collider.CompareTag("Enemy")) {
+                    EnemyDamage enemy = hit.collider.GetComponent<EnemyDamage>();
+                    enemy.TakeDamage();
+                } else {
+                    SpawnBulletHole(hit);
+                }
             }
         }
     }

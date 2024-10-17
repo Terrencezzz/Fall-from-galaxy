@@ -10,12 +10,13 @@ public class SpawnManager : MonoBehaviour
     public GameObject shriekerPrefab; // shreikers are large, fast, and loud. only known method of deterrence is to run, hide and pray. 
 
     private BloaterBehaviour bloaterScript;
+    private StalkerBehaviour stalkerScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        // SpawnEnemy("bloater", new Vector3 (39,0,36), new Vector3 (14,0,12));
         SpawnEnemy("bloater", new Vector3 (39,0,36), new Vector3 (39,0,28));
+        SpawnEnemy("stalker", new Vector3 (0,0,12), new Vector3 (39,0,28));
     }
 
     // Update is called once per frame
@@ -32,10 +33,10 @@ public class SpawnManager : MonoBehaviour
             bloaterScript.startPoint = startPoint;
             bloaterScript.endPoint = endPoint;
         } else if (enemyType == "stalker") {
-            // GameObject bloaterInstance = Instantiate(bloaterPrefab, startPoint, bloaterPrefab.transform.rotation);
-            // bloaterScript = bloaterInstance.GetComponent<BloaterBehaviour>();
-            // bloaterScript.startPoint = startPoint;
-            // bloaterScript.endPoint = endPoint;  
+            GameObject stalkerInstance = Instantiate(stalkerPrefab, startPoint, stalkerPrefab.transform.rotation);
+            stalkerScript = stalkerInstance.GetComponent<StalkerBehaviour>();
+            stalkerScript.startPoint = startPoint;
+            stalkerScript.endPoint = endPoint;  
         }
     }
 }

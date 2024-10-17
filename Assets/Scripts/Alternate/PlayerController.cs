@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private float gravity = -19.81f;
     private float yVelocity = 0f;
 
+    // Player stats
+    public int health = 100;
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -72,5 +75,9 @@ public class PlayerController : MonoBehaviour
         {
             flashlight.enabled = !flashlight.enabled;
         }
+    }
+
+    public void TakeDamage(int x) {
+        health -= x;
     }
 }
