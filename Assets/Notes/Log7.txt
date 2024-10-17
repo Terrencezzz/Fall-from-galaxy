@@ -1,0 +1,10 @@
+**Engineer:** Chloe Zhang  
+**Employee ID:** 776655
+
+**Stardate:** 26/11/2208
+
+Power systems are acting up again. This time, entire sections are losing power intermittently. The biomass containment units rely on constant power. We can't afford any failures.
+
+**Stardate:** 27/11/2208
+
+Discovered significant damage to the power conduits. It looks... chewed? That doesn't make sense. We don't have any rodents on board.
