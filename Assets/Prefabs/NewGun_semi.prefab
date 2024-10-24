@@ -1148,7 +1148,7 @@ GameObject:
   - component: {fileID: 11400676}
   m_Layer: 8
   m_Name: NewGun_semi
-  m_TagString: semiGun
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1184,75 +1184,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a804723bdccf04fca985e160ab5f88d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentStyle: 0
-  mls: {fileID: 0}
-  walkingSpeed: 3
-  runningSpeed: 5
-  bulletsIHave: 9999
-  bulletsInTheGun: 80
-  amountOfBulletsPerLoad: 80
-  currentGunPosition: {x: 0, y: 0, z: 0}
-  restPlacePosition: {x: -0.07, y: -0.06, z: 0.4}
-  aimPlacePosition: {x: 0, y: -0.05, z: 0.29}
-  gunAimTime: 0.05
-  reloading: 0
-  mouseSensitvity_notAiming: 4
-  mouseSensitvity_aiming: 1
-  mouseSensitvity_running: 1
-  meeleAttack: 0
-  aiming: 0
-  mainCamera: {fileID: 0}
-  rotationLagTime: 0
-  forwardRotationAmount: {x: 1, y: 1}
-  bulletSpawnPlace: {fileID: 0}
-  bullet: {fileID: 128836, guid: c9e619a669d974fd28b5c89e43f2bce2, type: 3}
-  roundsPerSecond: 100
-  recoilAmount_z: 0.04
-  recoilAmount_x: 0.04
-  recoilAmount_y: 0.04
-  recoilAmount_z_non: 0.02
-  recoilAmount_x_non: 0.01
-  recoilAmount_y_non: 0.01
-  recoilAmount_z_: 0.01
-  recoilAmount_x_: 0.005
-  recoilAmount_y_: 0.005
-  velocity_z_recoil: 0
-  velocity_x_recoil: 0
-  velocity_y_recoil: 0
-  recoilOverTime_z: 0.1
-  recoilOverTime_x: 0.1
-  recoilOverTime_y: 0.1
-  gunPrecision_notAiming: 300
-  gunPrecision_aiming: 100
-  cameraZoomRatio_notAiming: 60
-  cameraZoomRatio_aiming: 40
-  secondCameraZoomRatio_notAiming: 60
-  secondCameraZoomRatio_aiming: 55
-  gunPrecision: 0
-  shoot_sound_source: {fileID: 8263354}
-  reloadSound_source: {fileID: 8203074}
-  muzzelFlash:
-  - {fileID: 199458, guid: 51b76f616384d4946bed4ecc9a6c2c3e, type: 3}
-  - {fileID: 199458, guid: 487eef9aff9d0f543836d5af5ab26430, type: 3}
-  - {fileID: 199458, guid: 7b6a7e40bd9ccc0489274923930761c7, type: 3}
-  - {fileID: 199458, guid: 29d86feb88bf925428f9d7de6d4b401f, type: 3}
-  - {fileID: 199458, guid: 4aa4c63f0f9d6a84dbaeed6b9caeca80, type: 3}
-  muzzelSpawn: {fileID: 193726}
-  reloadChangeBulletsTime: 1.5
-  HUD_bullets: {fileID: 0}
-  horizontal_crosshair: {fileID: 2800000, guid: e1aa4c90445944348a112c3b7fa4b318, type: 3}
-  vertical_crosshair: {fileID: 2800000, guid: 3f8b669e9880644cbb903f67bbc9f824, type: 3}
-  top_pos_crosshair: {x: -2.7, y: -20.8}
-  bottom_pos_crosshair: {x: -2.7, y: -7.61}
-  left_pos_crosshair: {x: -14, y: -5}
-  right_pos_crosshair: {x: -5.5, y: -5}
-  size_crosshair_vertical: {x: 6, y: 28}
-  size_crosshair_horizontal: {x: 20, y: 10}
-  expandValues_crosshair: {x: 0, y: 0}
-  handsAnimator: {fileID: 9596676}
-  reloadAnimationName: Player_Reload
-  aimingAnimationName: Player_AImpose
-  meeleAnimationName: Character_Malee
+  damage: 10
+  range: 100
+  fireRate1: 0.1
+  fpsCam: {fileID: 0}
+  bulletHolePrefab: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
+  shootingSound: {fileID: 8263354}
+  autoGunPrefab: {fileID: 142272}
 --- !u!1 &142906
 GameObject:
   m_ObjectHideFlags: 0
