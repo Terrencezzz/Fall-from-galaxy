@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour
     public bool useSkybox = true;
     public bool useSkyboxAmbientLight = true;
     [Range(0f, 8f)]
-    public float skyboxAmbientIntensity = 1.0f;
+    public float skyboxAmbientIntensity = 0f;
 
     [Range(0f, 8f)]
     public float sceneLightIntensity = 0f;
@@ -148,7 +148,7 @@ public class GameManager : MonoBehaviour
 
     bool FindSpawnPosition(Vector3 playerPosition, out Vector3 spawnPosition)
     {
-        float spawnDistance = 1f;
+        float spawnDistance = 5f;
         for (int i = 0; i < 8; i++)
         {
             Vector3 direction = Quaternion.Euler(0, i * 45, 0) * Vector3.forward;
