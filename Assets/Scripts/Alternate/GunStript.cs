@@ -10,6 +10,7 @@ public class GunStript : MonoBehaviour
 
     public Camera fpsCam;
     public GameObject bulletHolePrefab;
+    public GameObject bloodEffectPrefab;
     public AudioSource shootingSound;
 
     private float nextTimeToShoot = 0f;
@@ -82,6 +83,7 @@ public class GunStript : MonoBehaviour
                 if (hit.collider.CompareTag("Enemy")) {
                     EnemyDamage enemy = hit.collider.GetComponent<EnemyDamage>();
                     enemy.TakeDamage();
+                    SpawnBloodEffect(hit);
                 } else {
                     SpawnBulletHole(hit);
                 }
@@ -99,5 +101,16 @@ public class GunStript : MonoBehaviour
 
         // Optionally, destroy the bullet hole after some time
         Destroy(bulletHole, 10f); // Destroy after 10 seconds to avoid clutter
+    }
+
+    void SpawnBloodEffect(RaycastHit hit)
+    {
+        // Spawn the blood effect at the point of impact
+        if (bloodEffectPrefab != null)
+        {
+            GameObject bloodEffect = Instantiate(bloodEffectPrefab, hit.point, Quaternion.LookRotation(hit.normal));
+            // Optionally, destroy the blood effect after some time
+            Destroy(bloodEffect, 2f); // Destroy after 2 seconds to avoid clutter
+        }
     }
 }
