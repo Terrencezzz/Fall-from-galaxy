@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1.5540582, g: 1.5540582, b: 1.5540582, a: 1}
+  m_AmbientSkyColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 1010294540}
   - {fileID: 1940995044}
   useAmbientLight: 1
-  ambientLightColor: {r: 1.5540582, g: 1.5540582, b: 1.5540582, a: 1}
+  ambientLightColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
   skyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
   useSkybox: 1
   useSkyboxAmbientLight: 1
