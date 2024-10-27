@@ -20,7 +20,11 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
+<<<<<<< Updated upstream
   m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0.9372549}
+=======
+  m_AmbientSkyColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
+>>>>>>> Stashed changes
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -854,6 +858,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 972244189732658583, guid: af0f215540b1a80498f1cc5db63afe57, type: 3}
   m_PrefabInstance: {fileID: 229883493}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
+=======
+--- !u!223 &230094459 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 3651403557624239134, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+  m_PrefabInstance: {fileID: 887646244}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &230867883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8782927174543622831, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
+  m_PrefabInstance: {fileID: 264030000}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &230867886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230867883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612e492417a33485f885137a5bafa12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characters:
+  - {fileID: 1010294540}
+  - {fileID: 1940995044}
+  useAmbientLight: 1
+  ambientLightColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
+  skyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  useSkybox: 1
+  useSkyboxAmbientLight: 1
+  skyboxAmbientIntensity: 1
+  sceneLightIntensity: 1
+  flashlightIntensity: 2
+  player: {fileID: 1010294540}
+  robotPrefab: {fileID: 0}
+  messageCanvas: {fileID: 230094459}
+  messageText: {fileID: 395216921}
+>>>>>>> Stashed changes
 --- !u!1001 &242062174
 PrefabInstance:
   m_ObjectHideFlags: 0
