@@ -1,31 +1,22 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using TMPro;
+using System.Collections;
 
-[ExecuteAlways] // Allows the script to run in edit mode
+[ExecuteAlways]
 public class GameManager : MonoBehaviour
 {
-    public List<GameObject> characters = new List<GameObject>();
+    public List<CharacterControllerBase> characters = new List<CharacterControllerBase>();
     private int currentCharacterIndex = 0;
 
     [Header("Lighting Settings")]
     public bool useAmbientLight = true;
     [ColorUsage(false, true)]
     public Color ambientLightColor = Color.white;
+    [Range(0f, 8f)] public float sceneLightIntensity = 0f;
+    [Range(0f, 8f)] public float flashlightIntensity = 1.0f;
 
-    public Material skyboxMaterial;
-    public bool useSkybox = true;
-    public bool useSkyboxAmbientLight = true;
-    [Range(0f, 8f)]
-    public float skyboxAmbientIntensity = 0f;
-
-    [Range(0f, 8f)]
-    public float sceneLightIntensity = 0f;
-    [Range(0f, 8f)]
-    public float flashlightIntensity = 1.0f;
-
-    public GameObject robotPrefab; // Robot prefab for spawning
+    public GameObject robotPrefab;
 
     [Header("Message UI")]
     public Canvas messageCanvas;
@@ -39,12 +30,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        InitializeCharacters();
     }
 
     void Start()
     {
         ApplyLightingSettings();
-        InitializeCharacters();
     }
 
     void OnValidate()
@@ -74,19 +66,13 @@ public class GameManager : MonoBehaviour
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = ambientLightColor;
         }
-        else if (useSkyboxAmbientLight && skyboxMaterial != null)
-        {
-            RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Skybox;
-            RenderSettings.ambientIntensity = skyboxAmbientIntensity;
-        }
         else
         {
             RenderSettings.ambientMode = UnityEngine.Rendering.AmbientMode.Flat;
             RenderSettings.ambientLight = Color.black;
         }
 
-        RenderSettings.skybox = useSkybox ? skyboxMaterial : null;
-
+        // Update all lights in the scene
         Light[] allLights = FindObjectsOfType<Light>();
         foreach (Light light in allLights)
         {
@@ -96,33 +82,25 @@ public class GameManager : MonoBehaviour
 
     void InitializeCharacters()
     {
-        PlayerController[] players = FindObjectsOfType<PlayerController>();
-        RobotController[] robots = FindObjectsOfType<RobotController>();
-
         characters.Clear();
-        characters.AddRange(System.Array.ConvertAll(players, p => p.gameObject));
-        characters.AddRange(System.Array.ConvertAll(robots, r => r.gameObject));
+        CharacterControllerBase[] allCharacters = FindObjectsOfType<CharacterControllerBase>();
+        characters.AddRange(allCharacters);
 
         for (int i = 0; i < characters.Count; i++)
-        {
-            if (i == currentCharacterIndex)
-                EnableControl(characters[i]);
-            else
-                DisableControl(characters[i]);
-        }
+            characters[i].EnableControl(i == currentCharacterIndex);
     }
 
     void SwitchCharacter()
     {
-        DisableControl(characters[currentCharacterIndex]);
+        characters[currentCharacterIndex].EnableControl(false);
         currentCharacterIndex = (currentCharacterIndex + 1) % characters.Count;
-        EnableControl(characters[currentCharacterIndex]);
+        characters[currentCharacterIndex].EnableControl(true);
     }
 
     void TrySpawnRobot()
     {
-        GameObject player = characters[currentCharacterIndex];
-        if (!player.CompareTag("Player") || !IsGroundFlat(player.transform.position))
+        CharacterControllerBase player = characters[currentCharacterIndex];
+        if (!(player is PlayerController) || !IsGroundFlat(player.transform.position))
         {
             Debug.Log("Cannot spawn robot here.");
             return;
@@ -131,7 +109,9 @@ public class GameManager : MonoBehaviour
         if (FindSpawnPosition(player.transform.position, out Vector3 spawnPosition))
         {
             GameObject newRobot = Instantiate(robotPrefab, spawnPosition, Quaternion.identity);
-            characters.Add(newRobot);
+            CharacterControllerBase robotController = newRobot.GetComponent<CharacterControllerBase>();
+            if (robotController != null)
+                characters.Add(robotController);
         }
         else
         {
@@ -165,7 +145,8 @@ public class GameManager : MonoBehaviour
 
     bool IsPositionSuitable(Vector3 position)
     {
-        if (!IsGroundFlat(position)) return false;
+        if (!IsGroundFlat(position))
+            return false;
         return Physics.OverlapSphere(position, 0.5f).Length == 0;
     }
 
@@ -190,42 +171,12 @@ public class GameManager : MonoBehaviour
         messageCanvas.enabled = false;
     }
 
-    void EnableControl(GameObject character)
-    {
-        ToggleCharacterComponents(character, true);
-    }
-
-    void DisableControl(GameObject character)
-    {
-        ToggleCharacterComponents(character, false);
-    }
-
-    void ToggleCharacterComponents(GameObject character, bool isEnabled)
-    {
-        var animator = character.GetComponentInChildren<Animator>();
-        if (animator != null) animator.enabled = isEnabled;
-
-        var playerController = character.GetComponent<PlayerController>();
-        if (playerController != null) playerController.enabled = isEnabled;
-
-        var robotController = character.GetComponent<RobotController>();
-        if (robotController != null) robotController.enabled = isEnabled;
-
-        var cam = character.GetComponentInChildren<Camera>();
-        if (cam != null) cam.enabled = isEnabled;
-
-        var audioListener = character.GetComponentInChildren<AudioListener>();
-        if (audioListener != null) audioListener.enabled = isEnabled;
-
-        var mouseLook = character.GetComponentInChildren<MouseLook>();
-        if (mouseLook != null) mouseLook.enabled = isEnabled;
-    }
-
     bool IsFlashlight(Light light)
     {
         foreach (var character in characters)
         {
-            if (character.GetComponentInChildren<Light>() == light) return true;
+            if (character.flashlight == light)
+                return true;
         }
         return false;
     }

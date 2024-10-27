@@ -1,17 +1,17 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class InteractionController : MonoBehaviour
 {
     public float interactDistance = 3f;
-    public float sphereRadius = 0.5f; // Adjust this radius as needed
+    public float sphereRadius = 0.5f;
     public LayerMask interactLayerMask;
 
     // UI Elements
     public GameObject interactPrompt;
     public GameObject noteCanvas;
     public TextMeshProUGUI noteText;
+
     // Internal variables
     private bool isReadingNote = false;
     private Camera cam;
@@ -28,9 +28,7 @@ public class InteractionController : MonoBehaviour
         if (isReadingNote)
         {
             if (Input.GetKeyDown(KeyCode.E))
-            {
                 CloseNote();
-            }
             return;
         }
 
@@ -44,9 +42,7 @@ public class InteractionController : MonoBehaviour
             {
                 interactPrompt.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
-                {
                     OpenNote(note);
-                }
             }
             else
             {
@@ -59,31 +55,32 @@ public class InteractionController : MonoBehaviour
         }
     }
 
-    void OpenNote(Notes note)  // Changed to Notes
+    void OpenNote(Notes note)
     {
         isReadingNote = true;
         noteCanvas.SetActive(true);
-        noteText.text = note.noteContent;  // Use noteContent from Notes class
+        noteText.text = note.noteContent;
         interactPrompt.SetActive(false);
 
-        // Disable player movement and mouse look
-        transform.parent.GetComponent<PlayerController>().enabled = false;
-        GetComponent<MouseLook>().enabled = false;
+        // Disable player control
+        var playerController = transform.parent.GetComponent<CharacterControllerBase>();
+        if (playerController != null)
+            playerController.EnableControl(false);
 
         // Unlock cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
 
-
     void CloseNote()
     {
         isReadingNote = false;
         noteCanvas.SetActive(false);
 
-        // Enable player movement and mouse look
-        transform.parent.GetComponent<PlayerController>().enabled = true;
-        GetComponent<MouseLook>().enabled = true;
+        // Enable player control
+        var playerController = transform.parent.GetComponent<CharacterControllerBase>();
+        if (playerController != null)
+            playerController.EnableControl(true);
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
