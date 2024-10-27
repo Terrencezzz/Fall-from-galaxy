@@ -44,11 +44,6 @@ public class SpawnManager : MonoBehaviour
         }
 
         GameObject enemyInstance = Instantiate(enemyPrefab, startPoint, Quaternion.identity);
-        EnemyBase enemyScript = enemyInstance.GetComponent<EnemyBase>();
-        if (enemyScript != null)
-        {
-            enemyScript.startPoint = startPoint;
-            enemyScript.endPoint = endPoint;
-        }
+
     }
 }

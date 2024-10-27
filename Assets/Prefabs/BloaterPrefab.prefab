@@ -1287,6 +1287,10 @@ MonoBehaviour:
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
   speed: 0.1
+  playerController: {fileID: 0}
+  detectionRange: 12
+  attackRange: 3
+  attackCooldown: 2
 --- !u!195 &-2593751131534623432
 NavMeshAgent:
   m_ObjectHideFlags: 0
