@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 755019600000349361}
   - component: {fileID: 828355697661969019}
-  - component: {fileID: 1873572987982865593}
+  - component: {fileID: 1224911017670993265}
   m_Layer: 6
   m_Name: GunManager
   m_TagString: Untagged
@@ -129,7 +129,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1873572987982865593
+--- !u!114 &1224911017670993265
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,18 +138,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 3718017040104760727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84bc7b0d4e2c75f429f298690d877a47, type: 3}
+  m_Script: {fileID: 11500000, guid: a100a542e4e89fb489f619cca3b65800, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
   range: 100
-  fireRate1: 0.1
+  fireRate: 0.1
   fpsCam: {fileID: 6398328323374467740}
   bulletHolePrefab: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
   bloodEffectPrefab: {fileID: 1013274939826982, guid: ffbf169ab9dcfdc45ae14010bc82a6b2, type: 3}
   shootingSound: {fileID: 828355697661969019}
-  autoGun: {fileID: 167390, guid: d263be518b43c45958a9fabf6650fd2d, type: 3}
-  currentGun: {fileID: 0}
+  autoGunPrefab: {fileID: 167390, guid: d263be518b43c45958a9fabf6650fd2d, type: 3}
 --- !u!1 &3772686971444969667
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,7 +193,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 1
   m_Range: 20
   m_SpotAngle: 70
   m_InnerSpotAngle: 7
