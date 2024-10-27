@@ -25939,67 +25939,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
   m_PrefabInstance: {fileID: 639512593}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &639578748
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7709792882650234453, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_Name
-      value: ShriekerPrefab
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234453, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_TagString
-      value: Enemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.1847143
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.00000023841858
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 10.665567
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7709792882650234474, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
 --- !u!1001 &640591292
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58673,7 +58612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1609829962470302593, guid: dafe2f44374925b4692cd6dbc587c068, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.85
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 1609829962470302593, guid: dafe2f44374925b4692cd6dbc587c068, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76894,7 +76833,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloaterPrefab: {fileID: 4937177918034177320, guid: 762fa080f5de74a9fa48fe38ccf1efd2, type: 3}
   stalkerPrefab: {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
-  walkerPrefab: {fileID: 0}
   shriekerPrefab: {fileID: 7709792882650234453, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
   enemiesToSpawn: []
 --- !u!1001 &2055103007
@@ -80516,4 +80454,3 @@ SceneRoots:
   - {fileID: 1997696556}
   - {fileID: 161137638}
   - {fileID: 992208995}
-  - {fileID: 639578748}

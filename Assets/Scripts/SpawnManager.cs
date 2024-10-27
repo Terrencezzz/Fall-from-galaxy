@@ -13,7 +13,6 @@ public class SpawnManager : MonoBehaviour
 
     public GameObject bloaterPrefab;
     public GameObject stalkerPrefab;
-    public GameObject walkerPrefab;
     public GameObject shriekerPrefab;
 
     public List<EnemySpawnData> enemiesToSpawn;
@@ -35,9 +34,6 @@ public class SpawnManager : MonoBehaviour
                 break;
             case "stalker":
                 enemyPrefab = stalkerPrefab;
-                break;
-            case "walker":
-                enemyPrefab = walkerPrefab;
                 break;
             case "shrieker":
                 enemyPrefab = shriekerPrefab;

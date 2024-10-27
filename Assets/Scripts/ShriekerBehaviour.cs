@@ -8,8 +8,8 @@ public class ShriekerBehaviour : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
     private GameObject player;
     private Vector3 targetVector;
-    public Vector3 startPoint;
-    public Vector3 endPoint;
+    public Vector3 centrePoint;
+    public int maxRaduis;
     private bool followPlayer = false;
 
     // For animation
@@ -30,7 +30,6 @@ public class ShriekerBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         lastPosition = transform.position;
-        targetVector = endPoint;
     }
 
     // Update is called once per frame
@@ -56,6 +55,7 @@ public class ShriekerBehaviour : MonoBehaviour
             // Navigation code
             if (followPlayer)
             {
+                // Follows player (or robot) if within range
                 agent.destination = player.transform.position;
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 // Attack player if within 3 units 
@@ -77,22 +77,24 @@ public class ShriekerBehaviour : MonoBehaviour
             }
             else
             {
-                // If player not in range, continue patrol
-                agent.destination = targetVector;
-                float distance = Vector3.Distance(transform.position, targetVector);
-                if (distance < 1f)
-                {
-                    targetVector = (targetVector == startPoint) ? endPoint : startPoint;
+                // If out of range, head back to centre point until within raduis 
+                float distance = Vector3.Distance(transform.position, centrePoint);
+                if (distance > maxRaduis) {
+                    agent.destination = centrePoint;
+                } else {
+                    agent.destination = transform.position;
                 }
             }
         }
     }
 
+    // Modified from other InFOV - follows the closest robot OR player entity
     void InFOV()
     {
-        // Check player is in enemy FOV
+        // Make an array of all objects in radius, find closest. this becomes the target
+        // for (int i = 0; i < )
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 30f)
+        if (distance < 10f)
         {
             followPlayer = true;
         }

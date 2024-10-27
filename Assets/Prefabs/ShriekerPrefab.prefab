@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5883623686585045548}
   m_Layer: 0
   m_Name: ShriekerPrefab
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,8 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b56b37ba8c6f84cbcaf5b44f1f344fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startPoint: {x: 0, y: 0, z: 0}
-  endPoint: {x: 0, y: 0, z: 0}
+  centrePoint: {x: 0, y: 0, z: 0}
+  maxRaduis: 0
   speed: 0
   playerController: {fileID: 0}
 --- !u!1001 &7709792881717896497
