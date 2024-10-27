@@ -22,7 +22,7 @@ public class MessageTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             messageDisplayed = true;
-            GameManager.Instance.DisplayMessage(this);
+            // GameManager.Instance.DisplayMessage(this);
         }
     }
 }
