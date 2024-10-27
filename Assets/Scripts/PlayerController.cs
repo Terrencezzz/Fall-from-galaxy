@@ -5,7 +5,7 @@ public class PlayerController : CharacterControllerBase
 {
     // Player Stats
     public int health = 100;
-    private bool isHand = true;
+    public bool isHand = true;
     private bool stop = false;
 
     protected override void Update()
@@ -14,7 +14,6 @@ public class PlayerController : CharacterControllerBase
             return;
 
         base.Update();
-        HandleHand();
     }
 
     protected override void MoveCharacter()
@@ -40,14 +39,6 @@ public class PlayerController : CharacterControllerBase
 
         move.y = yVelocity;
         controller.Move(move * Time.deltaTime);
-    }
-
-    void HandleHand()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-            isHand = true;
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
-            isHand = false;
     }
 
     private void OnTriggerEnter(Collider other)

@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1.2654797, g: 1.2654797, b: 1.2654797, a: 0.9372549}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 0
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -11160,6 +11160,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
   m_PrefabInstance: {fileID: 1295964429}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &253898581 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2572263711775789618, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+  m_PrefabInstance: {fileID: 1295964429}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253898579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48fc105652ebcd4787d567fc5bcda86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &255656881
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50290,6 +50301,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1224911017670993265, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 253898581}
+    - target: {fileID: 1224911017670993265, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: bloodEffectPrefab
+      value: 
+      objectReference: {fileID: 1962516439210982, guid: 3c657dedc43d33a4987fbf09e6363067, type: 3}
     - target: {fileID: 1873572987982865593, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: bloodEffectPrefab
       value: 
@@ -50368,7 +50387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611689207371090990, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Intensity
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Name
@@ -50399,10 +50418,7 @@ PrefabInstance:
     - {fileID: 1873572987982865593, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3718017040104760727, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1500489610}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
 --- !u!1001 &1296516055
 PrefabInstance:
@@ -58248,36 +58264,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 486616, guid: 1759eacdee08e12408d757d50755a6d0, type: 3}
   m_PrefabInstance: {fileID: 1495534227}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1500489608 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3718017040104760727, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
-  m_PrefabInstance: {fileID: 1295964429}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1500489610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1500489608}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a100a542e4e89fb489f619cca3b65800, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  range: 100
-  fireRate: 0.1
-  fpsCam: {fileID: 1661787879}
-  bulletHolePrefab: {fileID: 179232, guid: b2ac1383a96f94a50b7ed458be173bbd, type: 3}
-  bloodEffectPrefab: {fileID: 1013274939826982, guid: ffbf169ab9dcfdc45ae14010bc82a6b2, type: 3}
-  shootingSound: {fileID: 1500489611}
-  autoGunPrefab: {fileID: 167390, guid: d263be518b43c45958a9fabf6650fd2d, type: 3}
---- !u!82 &1500489611 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 828355697661969019, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
-  m_PrefabInstance: {fileID: 1295964429}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1500858629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63228,11 +63214,6 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4850925591946257393, guid: 350af83ef7fbacf4c81d93aaca7de956, type: 3}
   m_PrefabInstance: {fileID: 351650551}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &1661787879 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 6398328323374467740, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
-  m_PrefabInstance: {fileID: 1295964429}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1663885706
 PrefabInstance:

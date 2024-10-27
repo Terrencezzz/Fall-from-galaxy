@@ -15,15 +15,16 @@ public class GunScript : MonoBehaviour
 
     public GameObject autoGunPrefab;
     private GameObject currentGun;
+    public PlayerController playerController;
 
     private float nextTimeToShoot = 0f;
     private int gunType = 1;  // 1 = Default gun, 2 = Auto gun
-    private bool autoGunActive = true;
+    private bool autoGunActive = false;
 
     void Update()
     {
         HandleShooting();
-        HandleWeaponSwitching();
+        if (autoGunActive) HandleWeaponSwitching();
     }
 
     void HandleShooting()
@@ -53,14 +54,18 @@ public class GunScript : MonoBehaviour
         {
             if (currentGun != null)
                 Destroy(currentGun);
+                gunType = type;
+                playerController.isHand = true;
 
             if (type == 2 && autoGunActive)
             {
                 currentGun = Instantiate(autoGunPrefab, transform.position, transform.rotation);
                 currentGun.transform.SetParent(transform);
+                gunType = type;
+                playerController.isHand = false;
             }
 
-            gunType = type;
+            
         }
     }
 
