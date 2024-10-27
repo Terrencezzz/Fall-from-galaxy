@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 
 // [ExecuteAlways] // Allows the script to run in edit mode
-public class GameManager : MonoBehaviour
+public class TutorialGameManager : MonoBehaviour
 {
     public List<GameObject> characters = new List<GameObject>();
     private int currentCharacterIndex = 0;
@@ -25,15 +25,22 @@ public class GameManager : MonoBehaviour
     [Range(0f, 8f)]
     public float flashlightIntensity = 1.0f;
 
+    public GameObject player;
     public GameObject robotPrefab; // Robot prefab for spawning
 
     // Message UI 
     [Header("Message UI")]
     public Canvas messageCanvas;
     public TextMeshProUGUI messageText;
-    bool textDisplayed = false;
+    bool messageDisplayed = false;
+    bool msg1 = false;
+    bool msg2 = false;
+    bool msg3 = false;
+    bool msg4 = false;
+    bool msg5 = false;
+    bool msg6 = false;
 
-    public static GameManager Instance;
+    public static TutorialGameManager Instance;
 
     void Awake()
     {
@@ -67,6 +74,7 @@ public class GameManager : MonoBehaviour
             useAmbientLight = !useAmbientLight;
             ApplyLightingSettings();
         }
+        DisplayTutorialMessages();
     }
 
     void ApplyLightingSettings()
@@ -234,13 +242,15 @@ public class GameManager : MonoBehaviour
 
     // Writes given text to the HUD in a scolling manner 
     IEnumerator WriteText(string message) {
+        messageDisplayed = true;
         for (int i = 0; i < message.Length; i++) {
             messageText.text += message[i];
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
         }
         yield return new WaitForSeconds(3f);
         messageText.text = "";
-        yield return null;
+        messageDisplayed = false;
+        Debug.Log("Flag =" + msg1);
     }
 
     IEnumerator Wait(float time) {
@@ -249,5 +259,30 @@ public class GameManager : MonoBehaviour
 
     // Event manager to display tutorial messages 
     void DisplayTutorialMessages() {
+        if (!msg1 && !messageDisplayed) {
+            StartCoroutine(WriteText("Lilith:\nHello, I am lilith, your sentient suit AI. Your vitals are looking stable, but you should take it slow. It has been a long trip, after all!"));
+            msg1 = true;
+        }
+        if (msg1 && !msg2 && !messageDisplayed) {
+            Wait(2);
+            StartCoroutine(WriteText("Lilith:\nUse [W][A][S][D] to move.\nYou can toggle your flashlight with [F]. This docking bay looks quite empty - try explore the rest of the ship!"));
+            msg2 = true;
+        }
+        if (msg2 && !msg3 && !messageDisplayed && player.transform.position.x < -12) {
+            StartCoroutine(WriteText("Lilith:\nOh look! A drone! These can help investigate parts of the ship while you stay somewhere safe ... Who knows what could be lurking in these dark corridors.\nUse [E] to collect a drone, [Q] to deploy a drone, and [R] to switch between them."));
+            msg3 = true;
+        }
+        if (msg3 && !msg4 && !messageDisplayed && player.transform.position.z > 45) {
+            StartCoroutine(WriteText("Lilith:\nUse [SHIFT] to sprint!"));
+            msg4 = true;
+        }
+        if (msg4 && !msg5 && !messageDisplayed && player.transform.position.z > 45) {
+            StartCoroutine(WriteText("Lilith:\nThis catwalk looks a little worse for wear. Use [SPACE] to jump over this chasm!"));
+            msg5 = true;
+        }
+        if (msg5 && !msg6 && !messageDisplayed && player.transform.position.z > 9 && player.transform.position.x < 15) {
+            StartCoroutine(WriteText("Lilith:\nA console! Maybe we can use that to unlock this door ... I wonder what else these consoles can give us access to?"));
+            msg6 = true;
+        }
     }
 }
