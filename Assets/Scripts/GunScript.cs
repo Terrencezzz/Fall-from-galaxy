@@ -78,7 +78,8 @@ public class GunScript : MonoBehaviour
 
             if (hit.collider.CompareTag("Enemy"))
             {
-                var enemy = hit.collider.GetComponent<EnemyBase>();
+                EnemyDamage enemy = hit.collider.GetComponent<EnemyDamage>();
+                enemy.TakeDamage();
                 if (enemy != null)
                 {
                     enemy.TakeDamage();
