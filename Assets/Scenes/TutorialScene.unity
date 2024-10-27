@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
+  m_AmbientSkyColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -731,7 +731,7 @@ MonoBehaviour:
   - {fileID: 1010294540}
   - {fileID: 1940995044}
   useAmbientLight: 1
-  ambientLightColor: {r: 0, g: 0, b: 0, a: 1}
+  ambientLightColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
   skyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
   useSkybox: 1
   useSkyboxAmbientLight: 1
@@ -739,7 +739,7 @@ MonoBehaviour:
   sceneLightIntensity: 1
   flashlightIntensity: 2
   player: {fileID: 1010294540}
-  robotPrefab: {fileID: 8802300981589816706, guid: c476b11004b957f4da361250f9b88405, type: 3}
+  robotPrefab: {fileID: 0}
   messageCanvas: {fileID: 230094459}
   messageText: {fileID: 395216921}
 --- !u!1001 &242062174
@@ -1614,9 +1614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bloaterPrefab: {fileID: 4937177918034177320, guid: 762fa080f5de74a9fa48fe38ccf1efd2, type: 3}
   stalkerPrefab: {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
-  walkerPrefab: {fileID: 0}
   shriekerPrefab: {fileID: 7709792882650234453, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-  enemiesToSpawn: []
 --- !u!1001 &483054488
 PrefabInstance:
   m_ObjectHideFlags: 0

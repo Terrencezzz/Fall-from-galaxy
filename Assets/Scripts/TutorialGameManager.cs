@@ -40,6 +40,11 @@ public class TutorialGameManager : MonoBehaviour
     bool msg5 = false;
     bool msg6 = false;
 
+    // For Doors 
+    public GameObject closedDoorPrefab; // this needs to be dragged in from the actual scene, as we need its' position
+    public GameObject openDoorPrefab; // this can be a regular open doorway prefab 
+    public bool openDoor = false;
+
     public static TutorialGameManager Instance;
 
     void Awake()
@@ -74,6 +79,11 @@ public class TutorialGameManager : MonoBehaviour
             useAmbientLight = !useAmbientLight;
             ApplyLightingSettings();
         }
+        // Opens the door 
+        // set openDoor = true;
+        if (openDoor)
+            OpenDoor(closedDoorPrefab, openDoorPrefab); 
+
         DisplayTutorialMessages();
     }
 
@@ -280,9 +290,15 @@ public class TutorialGameManager : MonoBehaviour
             StartCoroutine(WriteText("Lilith:\nThis catwalk looks a little worse for wear. Use [SPACE] to jump over this chasm!"));
             msg5 = true;
         }
-        if (msg5 && !msg6 && !messageDisplayed && player.transform.position.z > 9 && player.transform.position.x < 15) {
+        if (msg5 && !msg6 && !messageDisplayed && player.transform.position.z > 108 && player.transform.position.x < 0) {
             StartCoroutine(WriteText("Lilith:\nA console! Maybe we can use that to unlock this door ... I wonder what else these consoles can give us access to?"));
             msg6 = true;
         }
+    }
+
+    void OpenDoor(GameObject closed, GameObject open) 
+    {
+        Instantiate(open, closed.transform.position, closed.transform.rotation);
+        Destroy(closed);
     }
 }

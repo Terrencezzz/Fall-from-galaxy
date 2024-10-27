@@ -247,7 +247,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(time);
     }
 
-    // Event manager to display tutorial messages 
-    void DisplayTutorialMessages() {
+    // Takes the closed door gameobject (in scene), and a prefab of an open door
+    void OpenDoor(GameObject closed, GameObject open) 
+    {
+        Instantiate(open, closed.transform.position, closed.transform.rotation);
+        Destroy(closed);
     }
 }
