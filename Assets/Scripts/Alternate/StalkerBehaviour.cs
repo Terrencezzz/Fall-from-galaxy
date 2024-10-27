@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class ShriekerBehaviour : MonoBehaviour
+public class StalkerBehaviour : MonoBehaviour, EnemyDamage
 {
     // For navigation and pathfinding 
-    private UnityEngine.AI.NavMeshAgent agent;
+    private NavMeshAgent agent;
     private GameObject player;
     private Vector3 targetVector;
     public Vector3 startPoint;
@@ -19,14 +20,14 @@ public class ShriekerBehaviour : MonoBehaviour
     private float animationSpeed;
 
     // For combat 
-    private int health = 15;
+    private int health = 5;
     public PlayerController playerController;
 
     // Start is called before the first frame update
     void Start()
     {
-        animator = GetComponentInChildren<Animator>();
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         lastPosition = transform.position;
@@ -37,13 +38,16 @@ public class ShriekerBehaviour : MonoBehaviour
     void Update()
     {
         // Death animation 
-        if (health <= 0)
-        {
+        if (health <= 0) {
             Die();
             animator.SetBool("Dead", true);
-        }
-        else
-        {
+        } else {
+
+            // If you want enemy to stand still, set 'IDLE' to true
+            if (animator.GetBool("Idle")) {
+                agent.isStopped = true;
+            }
+
             // Calculate speed for animation purposes
             float actualSpeed = Vector3.Distance(transform.position, lastPosition) / Time.deltaTime;
             animationSpeed = actualSpeed / speed;
@@ -54,73 +58,66 @@ public class ShriekerBehaviour : MonoBehaviour
             InFOV();
 
             // Navigation code
-            if (followPlayer)
-            {
+            if (followPlayer) {
                 agent.destination = player.transform.position;
                 float distance = Vector3.Distance(transform.position, player.transform.position);
                 // Attack player if within 3 units 
-                if (distance < 3f)
-                {
+                if (distance < 3f) {
                     // Attack player (if attack animation is not already being played)
-                    if (!animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
-                    {
+                    if (!animator.GetCurrentAnimatorStateInfo(0).IsName("attack")) {
                         agent.destination = transform.position; // Stop the NavMeshAgent
                         agent.isStopped = true;
                         animator.SetTrigger("Attack");
-                        playerController.TakeDamage(20);
+                        StartCoroutine(Wait());
                     }
-                }
-                else
-                {
-                    agent.isStopped = false;
-                }
-            }
-            else
-            {
+                } 
+            } else {
                 // If player not in range, continue patrol
                 agent.destination = targetVector;
                 float distance = Vector3.Distance(transform.position, targetVector);
-                if (distance < 1f)
-                {
+                if (distance < 1f) {
                     targetVector = (targetVector == startPoint) ? endPoint : startPoint;
                 }
             }
         }
     }
 
-    void InFOV()
-    {
+    void InFOV() {
         // Check player is in enemy FOV
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 30f)
-        {
+        if (distance < 12f) {
             followPlayer = true;
-        }
-        else
-        {
+        } else {
             followPlayer = false;
         }
     }
 
     // Collision detection 
-    public void TakeDamage()
-    {
-        health -= 0;
+    public void TakeDamage() {
+        health -= 1;
     }
 
     // Death logic 
-    void Die()
-    {
+    void Die() {
         // Stop navmesh
         agent.isStopped = true;
         speed = 0;
-        // Stop physics interactions 
+        // Stop physics interactions
         Rigidbody rb = GetComponent<Rigidbody>();
-        if (rb != null)
-        {
-            rb.isKinematic = true;
+        if (rb != null) {
+            rb.isKinematic = true; 
         }
-        // Stop collisi
+        // Stop collisions
         GetComponent<Collider>().enabled = false;
+    }
+
+    // Basic wait coroutine
+    IEnumerator Wait() {
+        yield return new WaitForSeconds(2);
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if (distance < 3f) {
+            playerController.TakeDamage(10);
+        }
+        agent.isStopped = false;
     }
 }
