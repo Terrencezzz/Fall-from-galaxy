@@ -19,7 +19,7 @@ public class GunStript : MonoBehaviour
     public GameObject autoGun;
     public GameObject currentGun;
 
-    bool autoGunActive = true;
+    bool autoGunActive = false;
 
     private int gunType = 1;
 
@@ -51,14 +51,16 @@ public class GunStript : MonoBehaviour
             if (type == 1 && currentGun != null)
             {
                 Destroy(currentGun);
+                gunType = type;
             }
             else if (type == 2 && autoGunActive)
             {
                 if (!currentGun) Destroy(currentGun);
                 currentGun = Instantiate(autoGun, transform.position, transform.rotation);
                 currentGun.transform.SetParent(this.transform);
+                gunType = type;
             }
-            gunType = type;
+            
         }
     }
 

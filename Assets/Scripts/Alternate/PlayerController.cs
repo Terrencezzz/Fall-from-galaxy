@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public int health = 100;
     private bool isHand = true;
     private bool stop = false;
+    private bool hasGun = false;
 
 
     void Start()
@@ -82,7 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             isHand = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && hasGun)
         {
             isHand = false;
         }
