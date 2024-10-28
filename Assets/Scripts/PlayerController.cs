@@ -21,6 +21,9 @@ public class PlayerController : CharacterControllerBase
             return;
 
         base.Update();
+        UpdateHealthUI();
+        UpdateLogText();
+        UpdateAmmoText();
     }
 
     protected override void MoveCharacter()
@@ -65,15 +68,15 @@ public class PlayerController : CharacterControllerBase
 
     public void UpdateHealthUI()
     {
-        healthText.text = "Health: " + health.ToString();
+        healthText.text = "Health: " + (100 + health).ToString();
     }
 
-    public void UpdateLogText(string message)
+    public void UpdateLogText()
     {
-        LogText.text = interactionController.noteCount.ToString();
+        LogText.text = "Note collected: " + interactionController.noteCount.ToString();
     }
 
-    public void UpdateAmmoText(int ammo)
+    public void UpdateAmmoText()
     {
         AmmoText.text = "Ammo: " + interactionController.ammoCount.ToString();
     }
