@@ -24,9 +24,9 @@ public class InteractionController : MonoBehaviour
     private Camera cam;
 
     // Inventory counts
-    private int robotCount = 0;
-    private int noteCount = 0;
-    private int ammoCount = 0;
+    public int robotCount = 0;
+    public int noteCount = 0;
+    public int ammoCount = 0;
 
     void Start()
     {
