@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
-// [ExecuteAlways] // Allows the script to run in edit mode
 public class TutorialGameManager : MonoBehaviour
 {
     public List<GameObject> characters = new List<GameObject>();

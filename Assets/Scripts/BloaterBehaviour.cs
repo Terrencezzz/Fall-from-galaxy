@@ -89,7 +89,7 @@ public class BloaterBehaviour : MonoBehaviour, EnemyDamage
     {
         // Check player is in enemy FOV
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 12f)
+        if (distance < 7f)
         {
             followPlayer = true;
         }
