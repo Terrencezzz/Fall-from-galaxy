@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 
-[ExecuteAlways] // Allows the script to run in edit mode
 public class GameManager : MonoBehaviour
 {
     public List<GameObject> characters = new List<GameObject>();
@@ -31,18 +30,12 @@ public class GameManager : MonoBehaviour
     [Header("Message UI")]
     public Canvas messageCanvas;
     public TextMeshProUGUI messageText;
+    bool textDisplayed = false;
 
     public static GameManager Instance;
 
-    // Doors to open and close
-    public GameObject closedDoorReactor; 
-    public GameObject openedDoorReactor; 
-    public bool openReactor = false;
-    public GameObject closedDoorWarehouse1; 
-    public GameObject openedDoorWarehouse1; 
-    public GameObject closedDoorWarehouse2; 
-    public GameObject openedDoorWarehouse2; 
-    public bool openWarehouse = false;
+    // Reference to InteractionController
+    private InteractionController interactionController;
 
     void Awake()
     {
@@ -56,7 +49,13 @@ public class GameManager : MonoBehaviour
     {
         ApplyLightingSettings();
         InitializeCharacters();
-        WriteText("");
+
+        // Find the InteractionController in the scene
+        interactionController = FindObjectOfType<InteractionController>();
+        if (interactionController == null)
+        {
+            Debug.LogError("GameManager: InteractionController not found in the scene.");
+        }
     }
 
     void OnValidate()
@@ -66,23 +65,22 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // Remove destroyed robots from the characters list
+        CleanUpCharacters();
+
+        // Switch character logic (if needed)
         if (Input.GetKeyDown(KeyCode.Tab))
             SwitchCharacter();
 
+        // Try to spawn robot
         if (Input.GetKeyDown(KeyCode.Q))
             TrySpawnRobot();
 
+        // Toggle ambient light
         if (Input.GetKeyDown(KeyCode.L))
         {
             useAmbientLight = !useAmbientLight;
             ApplyLightingSettings();
-        }
-        // Open reactor room
-        if (openReactor && (closedDoorReactor != null))
-            OpenDoor(closedDoorReactor, openedDoorReactor);
-        if (openWarehouse && (closedDoorWarehouse1 != null)) {
-            OpenDoor(closedDoorWarehouse1, openedDoorWarehouse1);
-            OpenDoor(closedDoorWarehouse2, openedDoorWarehouse2);
         }
     }
 
@@ -133,29 +131,77 @@ public class GameManager : MonoBehaviour
 
     void SwitchCharacter()
     {
+        // Prevent switching to robots (if desired)
+        if (characters.Count <= 1)
+            return;
+
         DisableControl(characters[currentCharacterIndex]);
         currentCharacterIndex = (currentCharacterIndex + 1) % characters.Count;
+
+        // Ensure we only switch to player characters
+        if (characters[currentCharacterIndex].CompareTag("Robot"))
+        {
+            currentCharacterIndex = (currentCharacterIndex + 1) % characters.Count;
+        }
+
         EnableControl(characters[currentCharacterIndex]);
     }
 
     void TrySpawnRobot()
     {
+        if (interactionController == null)
+        {
+            Debug.LogError("GameManager: InteractionController reference is missing.");
+            return;
+        }
+
+        if (interactionController.robotCount <= 0)
+        {
+            Debug.Log("No robots available to deploy.");
+            DisplayMessage("No robots available to deploy.");
+            return;
+        }
+
         GameObject player = characters[currentCharacterIndex];
         if (!player.CompareTag("Player") || !IsGroundFlat(player.transform.position))
         {
             Debug.Log("Cannot spawn robot here.");
+            DisplayMessage("Cannot spawn robot here.");
             return;
         }
 
         if (FindSpawnPosition(player.transform.position, out Vector3 spawnPosition))
         {
             GameObject newRobot = Instantiate(robotPrefab, spawnPosition, Quaternion.identity);
+
+            // Set the robot's tag to "Robot" (ensure the prefab has this tag)
+            newRobot.tag = "Robot";
+
+            // Reduce the robot count in InteractionController
+            interactionController.robotCount--;
+
+            // Add the new robot to the characters list
             characters.Add(newRobot);
+
+            // Display "Robot deployed" message
+            DisplayMessage("Robot deployed");
+
+            // Optionally, you can initialize the robot here
+            // For example, set its playerController or other components
+
+            // Do not switch the camera to the robot (keep it on the player)
         }
         else
         {
             Debug.Log("No space to spawn robot.");
+            DisplayMessage("No space to spawn robot.");
         }
+    }
+
+    void CleanUpCharacters()
+    {
+        // Remove any characters that have been destroyed
+        characters.RemoveAll(item => item == null);
     }
 
     bool IsGroundFlat(Vector3 position)
@@ -186,27 +232,6 @@ public class GameManager : MonoBehaviour
     {
         if (!IsGroundFlat(position)) return false;
         return Physics.OverlapSphere(position, 0.5f).Length == 0;
-    }
-
-    // public void DisplayMessage(MessageTrigger messageTrigger)
-    // {
-    //     messageTextUI.text = messageTrigger.messageText;
-    //     messageTextUI.color = messageTrigger.fontColor;
-    //     messageTextUI.fontSize = messageTrigger.fontSize;
-
-    //     RectTransform rectTransform = messageTextUI.GetComponent<RectTransform>();
-    //     rectTransform.anchorMin = messageTrigger.position;
-    //     rectTransform.anchorMax = messageTrigger.position;
-    //     rectTransform.anchoredPosition = Vector2.zero;
-
-    //     messageCanvas.enabled = true;
-    //     StartCoroutine(HideMessageAfterDelay(messageTrigger.displayDuration));
-    // }
-
-    IEnumerator HideMessageAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        messageCanvas.enabled = false;
     }
 
     void EnableControl(GameObject character)
@@ -244,30 +269,28 @@ public class GameManager : MonoBehaviour
     {
         foreach (var character in characters)
         {
-            if (character.GetComponentInChildren<Light>() == light) return true;
+            var characterLight = character.GetComponentInChildren<Light>();
+            if (characterLight != null && characterLight == light)
+                return true;
         }
         return false;
     }
 
-    // Writes given text to the HUD in a scolling manner 
-    IEnumerator WriteText(string message) {
-        for (int i = 0; i < message.Length; i++) {
-            messageText.text += message[i];
-            yield return new WaitForSeconds(0.1f);
-        }
-        yield return new WaitForSeconds(3f);
-        messageText.text = "";
-        yield return null;
-    }
-
-    IEnumerator Wait(float time) {
-        yield return new WaitForSeconds(time);
-    }
-
-    // Takes the closed door gameobject (in scene), and a prefab of an open door
-    void OpenDoor(GameObject closed, GameObject open) 
+    // Displays a message to the player
+    void DisplayMessage(string message, float duration = 2f)
     {
-        Instantiate(open, closed.transform.position, closed.transform.rotation);
-        Destroy(closed);
+        if (messageCanvas != null && messageText != null)
+        {
+            messageCanvas.enabled = true;
+            messageText.text = message;
+            CancelInvoke("HideMessage");
+            Invoke("HideMessage", duration);
+        }
+    }
+
+    void HideMessage()
+    {
+        if (messageCanvas != null)
+            messageCanvas.enabled = false;
     }
 }

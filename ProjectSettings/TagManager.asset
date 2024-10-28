@@ -19,6 +19,9 @@ TagManager:
   - Next
   - Message
   - Note
+  - AmmoCrate
+  - Reactor
+  - Door
   layers:
   - Default
   - TransparentFX

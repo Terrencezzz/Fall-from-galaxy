@@ -27,6 +27,15 @@ public class InteractionController : MonoBehaviour
     public int robotCount = 0;
     public int noteCount = 0;
     public int ammoCount = 0;
+    public bool hasGun = false;
+
+    // Reference to GunScript
+    private GunScript gunScript;
+
+    // Door requirements
+    [Header("Door Requirements")]
+    public int requiredRobots = 0;
+    public int requiredNotes = 0;
 
     void Start()
     {
@@ -50,6 +59,13 @@ public class InteractionController : MonoBehaviour
         interactPrompt.SetActive(false);
         notePanel.SetActive(false);
         messagePanel.SetActive(false);
+
+        // Get reference to GunScript
+        gunScript = GetComponentInChildren<GunScript>();
+        if (gunScript == null)
+        {
+            Debug.LogError("InteractionController: GunScript not found in children.");
+        }
     }
 
     void Update()
@@ -87,6 +103,18 @@ public class InteractionController : MonoBehaviour
                     ShowInteractPrompt("Press E to collect ammo");
                     if (Input.GetKeyDown(KeyCode.E))
                         CollectAmmo(hitObject);
+                    break;
+
+                case "Gun":
+                    ShowInteractPrompt("Press E to pick up gun");
+                    if (Input.GetKeyDown(KeyCode.E))
+                        CollectGun(hitObject);
+                    break;
+
+                case "Door":
+                    ShowInteractPrompt("Press E to open door");
+                    if (Input.GetKeyDown(KeyCode.E))
+                        OpenDoor(hitObject);
                     break;
 
                 case "Reactor":
@@ -143,7 +171,7 @@ public class InteractionController : MonoBehaviour
     {
         if (note == null)
         {
-            Debug.Log("InteractionController: Note component missing on the object.");
+            Debug.LogError("InteractionController: Note component missing on the object.");
             return;
         }
 
@@ -190,6 +218,69 @@ public class InteractionController : MonoBehaviour
 
         // Display "Note collected" message
         DisplayMessage("Note collected", 2f);
+    }
+
+    void CollectGun(GameObject gunObject)
+    {
+        if (hasGun)
+        {
+            DisplayMessage("You already have a gun", 2f);
+            return;
+        }
+
+        hasGun = true;
+
+        if (gunScript != null)
+        {
+            gunScript.autoGunActive = true;
+        }
+        else
+        {
+            Debug.LogError("InteractionController: GunScript is null.");
+        }
+
+        Destroy(gunObject);
+        Debug.Log("Gun collected.");
+        DisplayMessage("Gun collected", 2f);
+    }
+
+    void OpenDoor(GameObject doorObject)
+    {
+        // Door opening logic without using a Door class
+
+        // Door requirements (can be set per door using custom properties or defaults)
+        int doorRequiredRobots = requiredRobots;
+        int doorRequiredNotes = requiredNotes;
+
+        // Optionally, get custom requirements from the door object
+        DoorRequirements doorReq = doorObject.GetComponent<DoorRequirements>();
+        if (doorReq != null)
+        {
+            doorRequiredRobots = doorReq.requiredRobots;
+            doorRequiredNotes = doorReq.requiredNotes;
+        }
+
+        // Check if player meets the requirements
+        if (robotCount >= doorRequiredRobots && noteCount >= doorRequiredNotes)
+        {
+            // Open the door (e.g., destroy the door object or play an animation)
+            Destroy(doorObject);
+            DisplayMessage("Door opened", 2f);
+        }
+        else
+        {
+            string message = "Find ";
+
+            if (robotCount < doorRequiredRobots)
+                message += $"{doorRequiredRobots - robotCount} more robot(s) ";
+
+            if (noteCount < doorRequiredNotes)
+                message += $"{doorRequiredNotes - noteCount} more note(s) ";
+
+            message += "to continue";
+
+            DisplayMessage(message, 2f);
+        }
     }
 
     void InteractWithReactor()

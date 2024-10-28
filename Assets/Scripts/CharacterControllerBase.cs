@@ -16,6 +16,9 @@ public abstract class CharacterControllerBase : MonoBehaviour
     protected float gravity = -19.81f;
     protected float yVelocity = 0f;
 
+    // Control flag
+    protected bool controlsEnabled = true;
+
     protected virtual void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -27,6 +30,9 @@ public abstract class CharacterControllerBase : MonoBehaviour
 
     protected virtual void Update()
     {
+        if (!controlsEnabled)
+            return;
+
         MoveCharacter();
         HandleFlashlight();
     }
@@ -41,21 +47,18 @@ public abstract class CharacterControllerBase : MonoBehaviour
 
     public virtual void EnableControl(bool enable)
     {
-        enabled = enable;
+        controlsEnabled = enable;
+
+        // Disable movement components
+        var mouseLook = GetComponentInChildren<MouseLook>();
+        if (mouseLook != null)
+            mouseLook.enabled = enable;
+
         var animator = GetComponentInChildren<Animator>();
         if (animator != null)
             animator.enabled = enable;
 
-        var cam = GetComponentInChildren<Camera>();
-        if (cam != null)
-            cam.enabled = enable;
-
-        var audioListener = GetComponentInChildren<AudioListener>();
-        if (audioListener != null)
-            audioListener.enabled = enable;
-
-        var mouseLook = GetComponentInChildren<MouseLook>();
-        if (mouseLook != null)
-            mouseLook.enabled = enable;
+        // Do not disable the camera or audio listener
+        // This prevents errors when disabling controls
     }
 }

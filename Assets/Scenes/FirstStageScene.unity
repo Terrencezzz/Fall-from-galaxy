@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1.2654797, g: 1.2654797, b: 1.2654797, a: 0.9372549}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0.9372549}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 3.17
@@ -51053,6 +51053,10 @@ PrefabInstance:
       propertyPath: bloodEffectPrefab
       value: 
       objectReference: {fileID: 1962516439210982, guid: 3c657dedc43d33a4987fbf09e6363067, type: 3}
+    - target: {fileID: 1489391841096079127, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 660.0003
+      objectReference: {fileID: 0}
     - target: {fileID: 1873572987982865593, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: bloodEffectPrefab
       value: 
@@ -51124,6 +51128,14 @@ PrefabInstance:
     - target: {fileID: 5036727031619396524, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879669903997590982, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879669903997590982, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6398328323374467740, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_BackGroundColor.b
@@ -62236,6 +62248,25 @@ PrefabInstance:
     - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Researcher:** Dr. Samuel Hayes  \r\n**Identification Number:** 112358\r\n\r\n**Stardate:**
+        1/11/2208\r\n\r\nWe've finally received the biomass samples from under the
+        ice. Preliminary analysis shows an unusual resilience to extreme conditions.
+        The cells remain viable even after exposure to vacuum and radiation. I have
+        a feeling we're on the cusp of something extraordinary.\r\n\r\n**Stardate:**
+        5/11/2208\r\n\r\nCulturing the biomass has proven more difficult than anticipated.
+        It seems to require a unique combination of amino acids not found in standard
+        media. Dr. Pearch suggests we try synthesizing a custom growth medium. Her
+        enthusiasm is contagious.\r\n\r\n**Stardate:** 10/11/2208\r\n\r\nSuccess!
+        The biomass is growing, and rapidly at that. Under the microscope, the cellular
+        structures are unlike anything documented. They seem to adapt their morphology
+        in response to stimuli. This could redefine our understanding of life itself."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Log1.txt
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -76906,15 +76937,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: ambientLightColor.b
-      value: 1.2654797
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: ambientLightColor.g
-      value: 1.2654797
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: ambientLightColor.r
-      value: 1.2654797
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: flashlightIntensity

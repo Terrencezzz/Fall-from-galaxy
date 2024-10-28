@@ -21,9 +21,13 @@ public class PlayerController : CharacterControllerBase
             return;
 
         base.Update();
+
+        // Update UI elements
         UpdateHealthUI();
         UpdateLogText();
         UpdateAmmoText();
+
+        // Check for game over condition
         CheckGameOver();
     }
 
@@ -69,12 +73,12 @@ public class PlayerController : CharacterControllerBase
 
     public void UpdateHealthUI()
     {
-        healthText.text = "Health: " + (200 + health).ToString();
+        healthText.text = "Health: " + Mathf.Clamp(health, 0, 200).ToString();
     }
 
     public void UpdateLogText()
     {
-        LogText.text = "Note collected: " + interactionController.noteCount.ToString();
+        LogText.text = "Notes collected: " + interactionController.noteCount.ToString();
     }
 
     public void UpdateAmmoText()
@@ -84,14 +88,11 @@ public class PlayerController : CharacterControllerBase
 
     private void OnCollisionEnter(Collision collision)
     {
-        // Check if the collided object has the tag "Next"
         if (collision.gameObject.CompareTag("Next"))
         {
-            stop = true; // Stops player movement
-                         // Load the next scene
+            stop = true;
             int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
 
-            // Check if the next scene index is within the build settings range
             if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
             {
                 SceneManager.LoadScene(nextSceneIndex);
@@ -105,14 +106,12 @@ public class PlayerController : CharacterControllerBase
 
     private void CheckGameOver()
     {
-
-       if (health <= -200) {
-        
+        if (health <= -200)
+        {
             stop = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadSceneAsync(3);
+            SceneManager.LoadSceneAsync(3); // Ensure scene index 3 is correct
         }
     }
-
 }

@@ -19,7 +19,7 @@ public class GunScript : MonoBehaviour
 
     private float nextTimeToShoot = 0f;
     private int gunType = 1;  // 1 = Default gun, 2 = Auto gun
-    private bool autoGunActive = false;
+    public bool autoGunActive = false;
 
     void Update()
     {
