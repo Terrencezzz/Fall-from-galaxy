@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.02428216, g: 0.02428216, b: 0.02428216, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -745,12 +745,6 @@ MonoBehaviour:
   closedDoorPrefab: {fileID: 1174851085}
   openDoorPrefab: {fileID: 2309249342311256466, guid: dafe2f44374925b4692cd6dbc587c068, type: 3}
   openDoor: 0
-  structures: {fileID: 508382337}
-  startButton: {fileID: 0}
-  image: {fileID: 508540853}
-  startButtonObject: {fileID: 0}
-  titleText: {fileID: 0}
-  gamestarted: 0
 --- !u!1001 &242062174
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1824,11 +1818,6 @@ Transform:
   - {fileID: 28614883}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &508540853 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5997960065966876854, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
-  m_PrefabInstance: {fileID: 1676896770}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &514687437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7280,11 +7269,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2528018916317293401, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
       propertyPath: m_TagString
-      value: Ground
+      value: Next
       objectReference: {fileID: 0}
     - target: {fileID: 2528018916317293405, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
       propertyPath: m_TagString
       value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618459376425053239, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
+      propertyPath: m_Size.y
+      value: 0.320401
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618459376425053239, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
+      propertyPath: m_Center.x
+      value: 3.0000095
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618459376425053239, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
+      propertyPath: m_Center.y
+      value: -0.08977109
+      objectReference: {fileID: 0}
+    - target: {fileID: 2618459376425053239, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
+      propertyPath: m_Center.z
+      value: 2.9999943
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

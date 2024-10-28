@@ -19,6 +19,12 @@ public class MainCamera : MonoBehaviour
         SceneManager.LoadSceneAsync(1);
     }
 
+    public void Restart1()
+    {
+
+        SceneManager.LoadSceneAsync(2);
+    }
+
     public void Introduction()
     {
         SceneManager.LoadSceneAsync(4);

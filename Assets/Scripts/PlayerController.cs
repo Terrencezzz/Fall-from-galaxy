@@ -80,4 +80,26 @@ public class PlayerController : CharacterControllerBase
     {
         AmmoText.text = "Ammo: " + interactionController.ammoCount.ToString();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        // Check if the collided object has the tag "Next"
+        if (collision.gameObject.CompareTag("Next"))
+        {
+            stop = true; // Stops player movement
+                         // Load the next scene
+            int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+
+            // Check if the next scene index is within the build settings range
+            if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+            {
+                SceneManager.LoadScene(nextSceneIndex);
+            }
+            else
+            {
+                Debug.Log("No more scenes to load.");
+            }
+        }
+    }
+
 }
