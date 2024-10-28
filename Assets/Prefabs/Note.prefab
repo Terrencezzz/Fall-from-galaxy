@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8815979895451951546}
   - component: {fileID: 4209103557427731922}
   - component: {fileID: 4940410405134163916}
-  - component: {fileID: 9034046399625973154}
+  - component: {fileID: 8217116741320129435}
   m_Layer: 3
   m_Name: Note
   m_TagString: Interactable
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9034046399625973154
+--- !u!114 &8217116741320129435
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,7 +115,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2774918645341069890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 727d1dbda440e9a4e962b27f00908434, type: 3}
+  m_Script: {fileID: 11500000, guid: cec5276da649be44f8bdb48b65d877ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  noteFileName: Log1.txt
+  textFileName: 
+  noteContent: "**Researcher:** Dr. Samuel Hayes  \r\n**Identification Number:**
+    112358\r\n\r\n**Stardate:** 1/11/2208\r\n\r\nWe've finally received the biomass
+    samples from under the ice. Preliminary analysis shows an unusual resilience
+    to extreme conditions. The cells remain viable even after exposure to vacuum
+    and radiation. I have a feeling we're on the cusp of something extraordinary.\r\n\r\n**Stardate:**
+    5/11/2208\r\n\r\nCulturing the biomass has proven more difficult than anticipated.
+    It seems to require a unique combination of amino acids not found in standard
+    media. Dr. Pearch suggests we try synthesizing a custom growth medium. Her enthusiasm
+    is contagious.\r\n\r\n**Stardate:** 10/11/2208\r\n\r\nSuccess! The biomass is
+    growing, and rapidly at that. Under the microscope, the cellular structures are
+    unlike anything documented. They seem to adapt their morphology in response to
+    stimuli. This could redefine our understanding of life itself."
