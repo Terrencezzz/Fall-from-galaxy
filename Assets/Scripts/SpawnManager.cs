@@ -31,15 +31,12 @@ public class SpawnManager : MonoBehaviour
         SpawnEnemy("bloater", new Vector3(9,0,84), new Vector3(-27,0,78));
         SpawnEnemy("bloater", new Vector3(-45,0,60), new Vector3(-63,0,101));
         SpawnEnemy("bloater", new Vector3(-42,0,49), new Vector3(-48,0,35));
-
         SpawnEnemy("bloater", new Vector3(63,0,77), new Vector3(49,0,77));
         SpawnEnemy("bloater", new Vector3(58,0,63), new Vector3(40,0,60));
         SpawnEnemy("bloater", new Vector3(47,0,65), new Vector3(47,0,89));
-
         SpawnEnemy("bloater", new Vector3(-39,12,18), new Vector3(-3,12,0));
         SpawnEnemy("bloater", new Vector3(21,12,25), new Vector3(39,12,-36));
         SpawnEnemy("bloater", new Vector3(21,6,-36), new Vector3(39,6,-49));
-
         SpawnEnemy("bloater", new Vector3(48,-12,17), new Vector3(39,-12,18));
         SpawnEnemy("bloater", new Vector3(39,-12,20), new Vector3(40,-12,26));
         SpawnEnemy("bloater", new Vector3(38,-12,27), new Vector3(40,-12,37));
@@ -50,14 +47,17 @@ public class SpawnManager : MonoBehaviour
         SpawnEnemy("bloater", new Vector3(68,-12,17), new Vector3(59,-12,19));
 
         SpawnEnemy("stalker", new Vector3(-57,0,42), new Vector3(-10,0,83));
-        SpawnEnemy("stalker", new Vector3(26,0,65), new Vector3(-21,0,19));
-        SpawnEnemy("stalker", new Vector3(-63,0,11), new Vector3(-32,0,19));
-        SpawnEnemy("stalker", new Vector3(74,0,-6), new Vector3(68,0,19));
-        SpawnEnemy("stalker", new Vector3(39,6,-54), new Vector3(-4,0,19));
-        SpawnEnemy("stalker", new Vector3(47,9,90), new Vector3(47,0,19));
-        SpawnEnemy("stalker", new Vector3(32,4.6f,59), new Vector3(15,0,19));
+        SpawnEnemy("stalker", new Vector3(26,0,65), new Vector3(-21,0,23));
+        SpawnEnemy("stalker", new Vector3(-63,0,11), new Vector3(-32,0,-25));
+        SpawnEnemy("stalker", new Vector3(74,0,-6), new Vector3(68,0,-37));
+        SpawnEnemy("stalker", new Vector3(39,6,-54), new Vector3(-4,12,36));
+        SpawnEnemy("stalker", new Vector3(47,9,90), new Vector3(47,9,67));
+        SpawnEnemy("stalker", new Vector3(32,4.6f,59), new Vector3(15,0,66));
+        SpawnEnemy("stalker", new Vector3(69,-12,19), new Vector3(58,-12,48));
+        SpawnEnemy("stalker", new Vector3(45,-12,48), new Vector3(47,-12,18));
 
-
+        SpawnEnemy("shreiker", new Vector3(88,0,-8), new Vector3(-62,0,42));
+        SpawnEnemy("shreiker", new Vector3(25,0,66), new Vector3(68,0,-54));
     }
 
     // Update is called once per frame
@@ -79,10 +79,10 @@ public class SpawnManager : MonoBehaviour
             stalkerScript.startPoint = startPoint;
             stalkerScript.endPoint = endPoint;  
         } else if (enemyType == "shrieker") {
-            // GameObject shriekerInstance = Instantiate(shriekerPrefab, startPoint, shriekerPrefab.transform.rotation);
-            // shriekerScript = shriekerInstance.GetComponent<ShriekerBehaviour>();
-            // shriekerScript.startPoint = centrePoint;
-            // shriekerScript.endPoint = maxRadius;  
+            GameObject shriekerInstance = Instantiate(shriekerPrefab, startPoint, shriekerPrefab.transform.rotation);
+            shriekerScript = shriekerInstance.GetComponent<ShriekerBehaviour>();
+            stalkerScript.startPoint = startPoint;
+            stalkerScript.endPoint = endPoint;  
         }
     }
 }

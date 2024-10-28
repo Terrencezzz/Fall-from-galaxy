@@ -8,8 +8,8 @@ public class ShriekerBehaviour : MonoBehaviour
     private UnityEngine.AI.NavMeshAgent agent;
     private GameObject player;
     private Vector3 targetVector;
-    public Vector3 centrePoint;
-    public int maxRaduis;
+    public Vector3 startPoint;
+    public Vector3 endPoint;
     private bool followPlayer = false;
 
     // For animation
@@ -30,6 +30,7 @@ public class ShriekerBehaviour : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
         lastPosition = transform.position;
+        targetVector = endPoint;
     }
 
     // Update is called once per frame
@@ -77,12 +78,12 @@ public class ShriekerBehaviour : MonoBehaviour
             }
             else
             {
-                // If out of range, head back to centre point until within raduis 
-                float distance = Vector3.Distance(transform.position, centrePoint);
-                if (distance > maxRaduis) {
-                    agent.destination = centrePoint;
-                } else {
-                    agent.destination = transform.position;
+                // If player not in range, continue patrol
+                agent.destination = targetVector;
+                float distance = Vector3.Distance(transform.position, targetVector);
+                if (distance < 1f)
+                {
+                    targetVector = (targetVector == startPoint) ? endPoint : startPoint;
                 }
             }
         }
@@ -92,9 +93,8 @@ public class ShriekerBehaviour : MonoBehaviour
     void InFOV()
     {
         // Make an array of all objects in radius, find closest. this becomes the target
-        // for (int i = 0; i < )
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 10f)
+        if (distance < 20f)
         {
             followPlayer = true;
         }
