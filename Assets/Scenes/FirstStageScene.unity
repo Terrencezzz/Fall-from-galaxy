@@ -6395,6 +6395,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2528018916316870403, guid: c4470bf28fca8044dab507d047e88c69, type: 3}
   m_PrefabInstance: {fileID: 128929896}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &129317997
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -68.66
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Engineer:** Chloe Zhang  \r\n**Employee ID:** 776655\r\n\r\n**Stardate:**
+        26/11/2208\r\n\r\nPower systems are acting up again. This time, entire sections
+        are losing power intermittently. The biomass containment units rely on constant
+        power. We can't afford any failures.\r\n\r\n**Stardate:** 27/11/2208\r\n\r\nDiscovered
+        significant damage to the power conduits. It looks... chewed? That doesn't
+        make sense. We don't have any rodents on board."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &129588849
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11471,6 +11537,73 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e02a45feff251dc44bcb22375712232e, type: 3}
+--- !u!1001 &259805176
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 46.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 13.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Security Officer:** Lt. James \"Jim\" Miller  \r\n**Badge Number:**
+        404\r\n\r\n**Stardate:** 12/11/2208\r\n\r\nRoutine patrols have been uneventful.
+        The science team is excited about their \"goo,\" as I like to call it. Personally,
+        as long as it doesn't sprout legs and chase me down the corridor, I'm happy.\r\n\r\n**Stardate:**
+        15/11/2208\r\n\r\nHeard some strange noises near the lab today. Probably
+        just the ventilation acting up again. I'll have engineering take a look.
+        Can't have the scientists getting spooked over nothing.\r\nmarkdown"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &259868353
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13205,6 +13338,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3452931867044665262, guid: 32467b8dc355cd04da356b17dbac4f29, type: 3}
   m_PrefabInstance: {fileID: 313817309}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &314128166
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 18.702
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.102
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 31.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Engineer:** Chloe Zhang  \r\n**Employee ID:** 776655\r\n\r\n**Stardate:**
+        4/12/2208\r\n\r\nEmergency power only. Main generators are offline, and repairs
+        are impossible under current conditions. Life support is failing. I'm rerouting
+        what little power we have to essential systems.\r\n\r\n**Stardate:** 5/12/2208\r\n\r\nI
+        overheard that Dr. Pearch is working on a cure. I hope she succeeds. We need
+        a miracle."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &315125179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27073,6 +27272,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3452931867044665262, guid: 32467b8dc355cd04da356b17dbac4f29, type: 3}
   m_PrefabInstance: {fileID: 663305281}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &663818546
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -14.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.173
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Captain:** Amelia Wright  \r\n**Command ID:** 001122\r\n\r\n**Stardate:**
+        10/12/2208\r\n\r\nThis will be my final entry. The ship is lost. I'm going
+        to try set a course away from Earth to prevent the spread of this contagion.
+        Communications are down, but perhaps someone will find this log.\r\n\r\nTo
+        whoever reads this: Do not approach the U.C.E Marie Celeste. The risk is
+        too great.\r\n\r\nGodspeed."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &665782538
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39124,6 +39389,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7546825811929379479, guid: 1a91b66dee996324fa51df60c547b29d, type: 3}
   m_PrefabInstance: {fileID: 999753446}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1006004691
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.273
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.741
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Research Assistant:** Karen Lee  \r\n**ID Number:** 998877\r\n\r\n**Stardate:**
+        6/12/2208\r\n\r\nDr. Pearch collapsed in the lab. She's exhausted, but she
+        believes she's close to an antibody. I've taken over her notes. We can't
+        let her efforts be in vain.\r\n\r\n**Stardate:** 7/12/2208\r\n\r\nSuccess!
+        The antibody neutralizes the biomass in vitro. But we have no way to mass-produce
+        it, and distribution is another issue entirely."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1006578948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40337,6 +40668,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 490306, guid: 2e1b886e9f18d9e43bf1d35ceab0b368, type: 3}
   m_PrefabInstance: {fileID: 1032233144}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1032760514
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 52.181
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11.825
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.534
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Security Officer:** Lt. James \"Jim\" Miller  \r\n**Badge Number:**
+        404\r\n\r\n**Stardate:** 2/12/2208\r\n\r\nMultiple reports of crew members
+        missing. We're conducting a ship-wide sweep. Communications are down in several
+        sectors. Starting to feel like a bad horror flick.\r\n\r\n**Stardate:** 3/12/2208\r\n\r\nCame
+        across something... indescribable. It looked like Frank, but twisted. It
+        attacked without warning. Managed to fend it off, but we've sealed off Deck
+        3. This is way above my pay grade."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1033640471
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45396,6 +45794,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 486616, guid: 1759eacdee08e12408d757d50755a6d0, type: 3}
   m_PrefabInstance: {fileID: 1165413525}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1169345211
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 92.466
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.691
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Research Assistant:** Karen Lee  \r\n**ID Number:** 998877\r\n\r\n**Stardate:**
+        20/11/2208\r\n\r\nDr. Hayes asked me to monitor the biomass cultures overnight.
+        The cells exhibit bioluminescence under certain wavelengths. It's mesmerizing,
+        like watching a tiny galaxy in a petri dish.\r\n\r\n**Stardate:** 21/11/2208\r\n\r\nI
+        could swear the biomass reacts to my presence. When I approached the containment
+        unit, the luminescence intensified. Probably just a coincidence, but I'll
+        log it anyway.\r"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1173965911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51599,6 +52064,73 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 573ef1f633878a64f8caef594c1c31d5, type: 3}
+--- !u!1001 &1326807269
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -81.477
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.118
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 37.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Security Officer:** Lt. James \"Jim\" Miller  \r\n**Badge Number:**
+        404\r\n\r\n**Stardate:** 24/11/2208\r\n\r\nResponded to an incident in Lab
+        2. Dr. Lee claimed she saw the biomass move on its own. When we arrived,
+        the sample was... gone. Labs are supposed to be secure. Initiated a full
+        lockdown until we find the missing material.\r\n\r\n**Stardate:** 25/11/2208\r\n\r\nStill
+        no sign of the missing biomass. Some of the crew are getting jittery. I ordered
+        additional patrols. Can't shake the feeling that something's off."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1326865483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55167,6 +55699,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
   m_PrefabInstance: {fileID: 1414179467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1415471976
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 50.132
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.304
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.498
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Researcher:** Dr. Jeannette Pearch  \r\n**Identification Number:**
+        998435\r\n\r\n**Stardate:** 30/11/2208\r\n\r\nFrank's deterioration is alarming.
+        Preliminary tests suggest his cells are being rewritten at a molecular level.
+        This mirrors the adaptive properties of the biomass. Could there be a connection?\r\n\r\n**Stardate:**
+        1/12/2208\r\n\r\nIf the biomass can infect human tissue, we need to find
+        a countermeasure immediately. I've started working on an antibody. Time is
+        not on our side."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1418605321
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59763,6 +60362,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5725000371507048362, guid: b2452a5c2cd649a4db9eebcd16f7b155, type: 3}
   m_PrefabInstance: {fileID: 1547021321}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1547084266
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.718
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 55.884
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Medical Officer:** Dr. Raj Patel  \r\n**Medical License:** 554433\r\n\r\n**Stardate:**
+        8/12/2208\r\n\r\nThe infection is spreading rapidly. Symptoms appear within
+        hours of exposure. We've lost too many already. I've administered the antibody
+        to myself as a preventive measure.\r\n\r\n**Stardate:** 9/12/2208\r\n\r\nBad
+        news. The antibody only works if administered before infection. Once symptoms
+        manifest, it's too late. We need to warn Earth."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1550391290
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -59825,6 +60490,72 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5725000371507048362, guid: b2452a5c2cd649a4db9eebcd16f7b155, type: 3}
   m_PrefabInstance: {fileID: 1550391290}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1550725313
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -36.926
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 12.294
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 15.531
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Medical Officer:** Dr. Raj Patel  \r\n**Medical License:** 554433\r\n\r\n**Stardate:**
+        28/11/2208\r\n\r\nCrewmember Frank Thompson reported feeling unwell\u2014fever,
+        nausea, and disorientation. Symptoms are nonspecific, but I'll keep him under
+        observation.\r\n\r\n**Stardate:** 29/11/2208\r\n\r\nFrank's condition has
+        worsened. He's unresponsive and shows signs of severe cellular degradation.
+        Tests are inconclusive. Quarantined the medbay as a precaution."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1552325582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61210,6 +61941,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
   m_PrefabInstance: {fileID: 1598888098}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1600222268
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.057
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.047
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1601378339
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -66932,6 +67720,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 493122, guid: 9050f6c8a29d61f49ac1b3052875c968, type: 3}
   m_PrefabInstance: {fileID: 1750553219}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1752631116
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -19.614
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.203
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -37.989
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Chef:** Marco Rodriguez  \r\n**Crew ID:** 334455\r\n\r\n**Stardate:**
+        22/11/2208\r\n\r\nRunning low on coffee beans. This is not a drill. Repeat,
+        this is not a drill. If these scientists don't get their caffeine fix, we're
+        all in trouble.\r\n\r\n**Stardate:** 23/11/2208\r\n\r\nFound some emergency
+        rations in storage. Not exactly gourmet, but it'll have to do. Note to self:
+        never let Dr. Pearch near the kitchen again. Her attempt at \"space souffl\xE9\"
+        was... explosive.\r"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!4 &1752705738 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5245394490814720876, guid: 300abc4d244c9784cb330753dcf797e4, type: 3}
@@ -68653,6 +69508,74 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8220780882054941164, guid: e2fdcaac11701fe438724a8a8b3a76c5, type: 3}
   m_PrefabInstance: {fileID: 1808324481}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1808453684
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 38.918
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.135
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 39.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "**Engineer:** Chloe Zhang  \r\n**Employee ID:** 776655\r\n\r\n**Stardate:**
+        16/11/2208\r\n\r\nResponded to a report of strange noises near Lab 3. Found
+        nothing unusual, but did notice a flicker in the power grid. Might be time
+        to service the generators. Also, someone left a half-eaten sandwich in the
+        console. Seriously, people?\r\n\r\n**Stardate:** 18/11/2208\r\n\r\nPower
+        fluctuations are becoming more frequent. I've scheduled a full diagnostic.
+        On an unrelated note, I thought I saw something moving in the vents. Probably
+        just sleep deprivation playing tricks on me."
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1809047387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74885,6 +75808,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1453485022173259434, guid: eb4b38db67a56dc469a2c2aafcc36add, type: 3}
   m_PrefabInstance: {fileID: 1971155755}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1973133236
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Note (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 48.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 72.065
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: '**Unknown Entry**
+
+        
+
+        **Stardate:** [Corrupted Data]
+
+        
+
+        They''re
+        all gone. I can hear them in the walls. Whispering. Mocking me. The lights
+        are fading. If anyone finds this... remember us. Remember what we tried to
+        achieve.
+
+        
+
+        End of log.'
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
 --- !u!1001 &1976907573
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80508,3 +81507,18 @@ SceneRoots:
   - {fileID: 161137638}
   - {fileID: 992208995}
   - {fileID: 501771849}
+  - {fileID: 1600222268}
+  - {fileID: 259805176}
+  - {fileID: 1808453684}
+  - {fileID: 1169345211}
+  - {fileID: 1752631116}
+  - {fileID: 1326807269}
+  - {fileID: 129317997}
+  - {fileID: 1550725313}
+  - {fileID: 1415471976}
+  - {fileID: 1032760514}
+  - {fileID: 314128166}
+  - {fileID: 1006004691}
+  - {fileID: 1547084266}
+  - {fileID: 663818546}
+  - {fileID: 1973133236}
