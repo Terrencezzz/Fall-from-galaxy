@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : CharacterControllerBase
 {
     // Player Stats
-    public int health = 100;
+    public int health = 200;
     public bool isHand = true;
     private bool stop = false;
 
@@ -24,6 +24,7 @@ public class PlayerController : CharacterControllerBase
         UpdateHealthUI();
         UpdateLogText();
         UpdateAmmoText();
+        CheckGameOver();
     }
 
     protected override void MoveCharacter()
@@ -68,7 +69,7 @@ public class PlayerController : CharacterControllerBase
 
     public void UpdateHealthUI()
     {
-        healthText.text = "Health: " + (100 + health).ToString();
+        healthText.text = "Health: " + (200 + health).ToString();
     }
 
     public void UpdateLogText()
@@ -99,6 +100,18 @@ public class PlayerController : CharacterControllerBase
             {
                 Debug.Log("No more scenes to load.");
             }
+        }
+    }
+
+    private void CheckGameOver()
+    {
+
+       if (health <= -200) {
+        
+            stop = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadSceneAsync(3);
         }
     }
 
