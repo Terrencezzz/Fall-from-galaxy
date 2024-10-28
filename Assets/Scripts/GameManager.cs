@@ -31,9 +31,18 @@ public class GameManager : MonoBehaviour
     [Header("Message UI")]
     public Canvas messageCanvas;
     public TextMeshProUGUI messageText;
-    bool textDisplayed = false;
 
     public static GameManager Instance;
+
+    // Doors to open and close
+    public GameObject closedDoorReactor; 
+    public GameObject openedDoorReactor; 
+    public bool openReactor = false;
+    public GameObject closedDoorWarehouse1; 
+    public GameObject openedDoorWarehouse1; 
+    public GameObject closedDoorWarehouse2; 
+    public GameObject openedDoorWarehouse2; 
+    public bool openWarehouse = false;
 
     void Awake()
     {
@@ -47,6 +56,7 @@ public class GameManager : MonoBehaviour
     {
         ApplyLightingSettings();
         InitializeCharacters();
+        WriteText("");
     }
 
     void OnValidate()
@@ -66,6 +76,13 @@ public class GameManager : MonoBehaviour
         {
             useAmbientLight = !useAmbientLight;
             ApplyLightingSettings();
+        }
+        // Open reactor room
+        if (openReactor && (closedDoorReactor != null))
+            OpenDoor(closedDoorReactor, openedDoorReactor);
+        if (openWarehouse && (closedDoorWarehouse1 != null)) {
+            OpenDoor(closedDoorWarehouse1, openedDoorWarehouse1);
+            OpenDoor(closedDoorWarehouse2, openedDoorWarehouse2);
         }
     }
 
