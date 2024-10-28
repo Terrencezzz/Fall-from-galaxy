@@ -18,6 +18,7 @@ TagManager:
   - hole
   - Next
   - Message
+  - Note
   layers:
   - Default
   - TransparentFX
