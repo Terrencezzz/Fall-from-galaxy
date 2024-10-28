@@ -73,7 +73,7 @@ public class PlayerController : CharacterControllerBase
 
     public void UpdateHealthUI()
     {
-        healthText.text = "Health: " + Mathf.Clamp(health, 0, 200).ToString();
+        healthText.text = "Health: " + (200 + health).ToString();
     }
 
     public void UpdateLogText()

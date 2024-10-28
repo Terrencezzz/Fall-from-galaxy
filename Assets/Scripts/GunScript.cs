@@ -19,7 +19,10 @@ public class GunScript : MonoBehaviour
 
     private float nextTimeToShoot = 0f;
     private int gunType = 1;  // 1 = Default gun, 2 = Auto gun
-    public bool autoGunActive = false;
+    public bool autoGunActive = true;
+
+    public InteractionController interactionController;
+
 
     void Update()
     {
@@ -29,7 +32,7 @@ public class GunScript : MonoBehaviour
 
     void HandleShooting()
     {
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToShoot && gunType == 2)
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToShoot && gunType == 2 && interactionController.ammoCount > 0)
         {
             nextTimeToShoot = Time.time + fireRate;
             Shoot();
@@ -96,6 +99,8 @@ public class GunScript : MonoBehaviour
                 SpawnBulletHole(hit);
             }
         }
+
+        interactionController.ammoCount--;
     }
 
     void SpawnBulletHole(RaycastHit hit)
