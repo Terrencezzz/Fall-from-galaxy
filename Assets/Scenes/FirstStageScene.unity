@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 1.2654797, g: 1.2654797, b: 1.2654797, a: 0.9372549}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 0
+  m_AmbientIntensity: 3.17
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -50391,7 +50391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611689207371090990, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Intensity
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Name
@@ -75610,7 +75610,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: sceneLightIntensity
-      value: 0
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: characters.Array.size
@@ -75622,7 +75622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: skyboxAmbientIntensity
-      value: 0
+      value: 3.17
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: characters.Array.data[0]
@@ -76819,52 +76819,6 @@ MonoBehaviour:
   bloaterPrefab: {fileID: 4937177918034177320, guid: 762fa080f5de74a9fa48fe38ccf1efd2, type: 3}
   stalkerPrefab: {fileID: 3595625012628118935, guid: 156ea8d7801e10143a361335f8615ae7, type: 3}
   shriekerPrefab: {fileID: 7709792882650234453, guid: d27bb82bbc54f8a41b9c3129ef034a94, type: 3}
-  enemiesToSpawn:
-  - enemyType: bloater
-    startPoint: {x: 46, y: 0, z: 42}
-    endPoint: {x: 31, y: 0, z: 28}
-  - enemyType: bloater
-    startPoint: {x: 39, y: 0, z: -6}
-    endPoint: {x: 21, y: 0, z: -36}
-  - enemyType: bloater
-    startPoint: {x: 51, y: 0, z: -36}
-    endPoint: {x: 69, y: 0, z: -54}
-  - enemyType: bloater
-    startPoint: {x: 58, y: 0, z: -24}
-    endPoint: {x: 45, y: 0, z: -18}
-  - enemyType: bloater
-    startPoint: {x: 15, y: 0, z: -36}
-    endPoint: {x: 11, y: 0, z: -43}
-  - enemyType: bloater
-    startPoint: {x: 3, y: 0, z: -25}
-    endPoint: {x: 11, y: 0, z: -17}
-  - enemyType: bloater
-    startPoint: {x: -21.5, y: 0, z: 6}
-    endPoint: {x: -39, y: 0, z: -24}
-  - enemyType: bloater
-    startPoint: {x: -21.5, y: 0, z: 18}
-    endPoint: {x: -21.5, y: 0, z: 60}
-  - enemyType: bloater
-    startPoint: {x: -21.5, y: 0, z: 18}
-    endPoint: {x: -21.5, y: 0, z: 60}
-  - enemyType: bloater
-    startPoint: {x: -57, y: 0, z: 5}
-    endPoint: {x: -57, y: 0, z: 18}
-  - enemyType: bloater
-    startPoint: {x: 69, y: 0, z: 6}
-    endPoint: {x: -81, y: 0, z: 19}
-  - enemyType: bloater
-    startPoint: {x: -3, y: 0, z: 30}
-    endPoint: {x: 15, y: 0, z: 48}
-  - enemyType: bloater
-    startPoint: {x: 9, y: 0, z: 84}
-    endPoint: {x: -27, y: 0, z: 78}
-  - enemyType: bloater
-    startPoint: {x: -45.5, y: 0, z: 60}
-    endPoint: {x: -63, y: 0, z: 101}
-  - enemyType: bloater
-    startPoint: {x: -42, y: 0, z: 49}
-    endPoint: {x: -48, y: 0, z: 35}
 --- !u!1001 &2055103007
 PrefabInstance:
   m_ObjectHideFlags: 0
