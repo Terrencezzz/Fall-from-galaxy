@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +9,21 @@ public class PlayerController : CharacterControllerBase
     public bool isHand = true;
     private bool stop = false;
 
+    public TextMeshProUGUI healthText;
+    public TextMeshProUGUI LogText;
+    public TextMeshProUGUI AmmoText;
+
+    public InteractionController interactionController;
+
     protected override void Update()
     {
         if (stop)
             return;
 
         base.Update();
+        UpdateHealthUI();
+        UpdateLogText();
+        UpdateAmmoText();
     }
 
     protected override void MoveCharacter()
@@ -54,5 +64,20 @@ public class PlayerController : CharacterControllerBase
     {
         health -= damage;
         Debug.Log("Player health: " + health);
+    }
+
+    public void UpdateHealthUI()
+    {
+        healthText.text = "Health: " + (100 + health).ToString();
+    }
+
+    public void UpdateLogText()
+    {
+        LogText.text = "Note collected: " + interactionController.noteCount.ToString();
+    }
+
+    public void UpdateAmmoText()
+    {
+        AmmoText.text = "Ammo: " + interactionController.ammoCount.ToString();
     }
 }
