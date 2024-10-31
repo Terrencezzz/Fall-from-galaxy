@@ -17,7 +17,7 @@ public class Checktutorial : MonoBehaviour
     {
         if (interactionController.robotCount == 1)
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(1);
         }
     }
 }
