@@ -23,6 +23,9 @@ public class PlayerController : CharacterControllerBase
     private int maxRobots = 3;
     private int maxNotes = 24;
 
+    [Header("Scene Settings")]
+    public int deathScene = 2; // Scene index for death, editable in Inspector
+
     [Header("Wayfinder Settings")]
     public GameObject wayfinderPrefab; // Assign in the Inspector
     public float wayfinderCooldown = 30f; // Total time for the bar to fill (modifiable in the Inspector)
@@ -258,7 +261,7 @@ public class PlayerController : CharacterControllerBase
     private System.Collections.IEnumerator LoadGameOverSceneWithDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        SceneManager.LoadSceneAsync(3); // Ensure scene index 3 is correct
+        SceneManager.LoadSceneAsync(deathScene); // Uses the configurable deathScene value
     }
 
     private void ActivateWayfinder()
