@@ -20,13 +20,13 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0.9372549}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 0}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 3.17
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: a4be220830e90ea4eb88b48b7fd376ce, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1483,6 +1483,15 @@ Transform:
   - {fileID: 1547084267}
   - {fileID: 663818547}
   - {fileID: 1973133237}
+  - {fileID: 721748402}
+  - {fileID: 1641021753}
+  - {fileID: 1517293860}
+  - {fileID: 1408329560}
+  - {fileID: 1577223089}
+  - {fileID: 1985587286}
+  - {fileID: 1370166383}
+  - {fileID: 880226599}
+  - {fileID: 138680057}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &29784392
@@ -7175,6 +7184,83 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
   m_PrefabInstance: {fileID: 138385067}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &138680056
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 45.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "Chrissie,\n\nHow are things on the ship? Hope all is well, I get a
+        little worried when I don't hear from you for more than a month. Get back
+        to me ASAP! I miss you a lot. \n\nA quick update on things at home; the girls
+        are fine, a little restless while school is out but nothing new. David got
+        a new dog, and he's been letting the girls take it for walks when he goes
+        for his operations. The microwave keeps breaking, so I'll have to get another
+        one. Otherwise, nothing much happening at this end of the solar system. \n\nAll
+        the best my love,\nJeremy."
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter9.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &138680057 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 138680056}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &141429462
 PrefabInstance:
@@ -18266,7 +18352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246475828207725030, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Intensity
-      value: 2.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802300981589816706, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Name
@@ -29998,6 +30084,82 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7477967184759821569, guid: 74c0dfff25c1f104382fcabf0479898d, type: 3}
   m_PrefabInstance: {fileID: 721488860}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &721748401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -30.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.585
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 49.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "Dear Dr. Martinez,\n\nI hope this message reaches you before you depart
+        for Ganymede. I wanted to express my utmost admiration for your work in xenobiology.
+        The way you inspire young scientists like myself is unparalleled. I heard
+        about your upcoming mission, and I know you'll make groundbreaking discoveries.\n\nPlease
+        accept this small token\u2014a lucky charm I've carried since my first day
+        in the lab. May it bring you good fortune on your journey.\n\nBest regards,\n\nAmelia
+        Clarke\n\nGraduate Student, Astrobiology Department"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter1.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &721748402 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 721748401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &722375217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35947,6 +36109,86 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 711016e15dc0bf14c91cd472ebddb879, type: 3}
+--- !u!1001 &880226598
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 24.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.603
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: 'Dear Daddy,
+
+
+        What is space like? Mummy said you would be safe
+        from aleins, but they are defenietly out there somewhere. I hope you come
+        back soon!
+
+
+        I miss you.
+
+        Love, Mary. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter8.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &880226599 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 880226598}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &880593838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51871,6 +52113,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.123
       objectReference: {fileID: 0}
+    - target: {fileID: 7611689207371090990, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Name
       value: Player
@@ -54657,6 +54903,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3691659005178554142, guid: aedebdaeae12a6743b39120d2f5156b0, type: 3}
   m_PrefabInstance: {fileID: 1367818311}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1370166382
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -64.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: 'Hey Zoe,
+
+
+        You''ll never believe what happened today! One of
+        the researchers asked me if I could whip up a "gluten-free, dairy-free, flavor-free"
+        dessert. I told him he''d be better off eating the food replicator''s instruction
+        manual!
+
+
+        Miss your terrible cooking.
+
+
+        Stay awesome,
+
+
+        Marco'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter7.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &1370166383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 1370166382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1371904875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -56317,6 +56648,95 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404116756}
   m_Mesh: {fileID: 4300002, guid: 3a8384e20c816134c8d4a4d359d33c29, type: 3}
+--- !u!1001 &1408329559
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -99.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 30.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: 'Dear Jake,
+
+
+        I bet you''re still mad that I beat you at chess
+        before I left. Here''s a little secret: I may have swapped the pieces when
+        you weren''t looking. Consider it payback for eating my sandwich last week.
+
+
+        Don''t
+        tell anyone, or I''ll deny everything.
+
+
+        Miss you, buddy.
+
+
+        Your
+        favorite (and only) sister,
+
+
+        Lily'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter4.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &1408329560 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 1408329559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1409376533
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58759,7 +59179,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246475828207725030, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Intensity
-      value: 2.98
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8802300981589816706, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Name
@@ -60384,6 +60804,80 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1609829962470302593, guid: dafe2f44374925b4692cd6dbc587c068, type: 3}
   m_PrefabInstance: {fileID: 1517017026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1517293859
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -34.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -51.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "Dear Mom,\n\nI finally made it onto the Marie Celeste! Can you believe
+        it? Me, on a real deep-space mission! I promise to bring you back something
+        special\u2014maybe a rock or some alien goo (if it's allowed).\n\nDon't worry
+        about me; the crew is great, and the food isn't as bad as you warned. I'll
+        write more once we reach Ganymede.\n\nLove you to the moon and back (literally!),\n\nSam"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter3.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &1517293860 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 1517293859}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1518152471
 PrefabInstance:
@@ -62474,6 +62968,81 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6954531691785998512, guid: cf8443763fc34314490f8a3e2f94dd37, type: 3}
   m_PrefabInstance: {fileID: 1572994322}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1577223088
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.745
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 40.093
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.962
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: "Dear Dr. Nguyen,\n\nCongratulations on being selected for the Ganymede
+        mission! Your expertise in genetic engineering is second to none. The entire
+        faculty is proud of you.\n\nRemember to keep an eye out for any interesting
+        flora\u2014or fauna! And don't forget to send us a postcard (or at least
+        a data packet) when you make your groundbreaking discoveries.\n\nWarm regards,\n\nProfessor
+        Helen Moore\n\nDean of Biological Sciences"
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter5.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &1577223089 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 1577223088}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1577227220
 PrefabInstance:
@@ -64828,6 +65397,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 469024, guid: 9efb87eb649319c4c8c3a954a74df462, type: 3}
   m_PrefabInstance: {fileID: 1639951496}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1641021752
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -66.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 35.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 46.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: 'Hey Tim,
+
+
+        Remember that time we joked about finding space
+        jellyfish on Ganymede? Well, make sure you don''t bring any souvenirs back
+        that glow in the dark! Just kidding.
+
+
+        All jokes aside, the office
+        isn''t the same without your terrible coffee and worse puns. Come back soon,
+        or at least send some new jokes to keep us entertained.
+
+
+        Take care
+        out there, space cowboy.
+
+
+        Cheers,
+
+
+        Alex'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter2.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &1641021753 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 1641021752}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1647454965
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -65569,7 +66228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10891694, guid: 5f8552cfeac0c29428f4d3d1362bacae, type: 3}
       propertyPath: m_Intensity
-      value: 2.98
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77640,6 +78299,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 469024, guid: 9efb87eb649319c4c8c3a954a74df462, type: 3}
   m_PrefabInstance: {fileID: 1982710306}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1985587285
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 29757264}
+    m_Modifications:
+    - target: {fileID: 2774918645341069890, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_Name
+      value: Letter6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -39.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 47.658
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: noteContent
+      value: 'Hi Dad,
+
+
+        I saw your ship launch today! It was the coolest
+        thing ever. I told all my friends that my dad is an astronaut AND a scientist.
+        They think you''re the best (but not as much as I do).
+
+
+        Mom says
+        I have to do my homework now, but I wanted to say I love you and I can''t
+        wait until you come home.
+
+
+        Love,
+
+
+        Max
+
+
+        P.S. Can
+        you bring me a moon rock?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217116741320129435, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+      propertyPath: textFileName
+      value: Letter6.txt
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+--- !u!4 &1985587286 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7549635983147388706, guid: 710f6a7786ab5b64c9f68b32b8e4c4e7, type: 3}
+  m_PrefabInstance: {fileID: 1985587285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1986541951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78036,15 +78785,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: ambientLightColor.b
-      value: 0
+      value: 1.971698
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: ambientLightColor.g
-      value: 0
+      value: 1.971698
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: ambientLightColor.r
-      value: 0
+      value: 1.9999999
       objectReference: {fileID: 0}
     - target: {fileID: 1785714155891048732, guid: e379a350ebc35a64d84278bff94b5fb3, type: 3}
       propertyPath: flashlightIntensity

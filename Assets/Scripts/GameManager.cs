@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
 
     // Reference to InteractionController
     private InteractionController interactionController;
-
+    
     void Awake()
     {
         // Implement Singleton Pattern

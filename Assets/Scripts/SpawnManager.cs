@@ -58,6 +58,8 @@ public class SpawnManager : MonoBehaviour
 
         SpawnEnemy("shrieker", new Vector3(88,0,-8), new Vector3(-62,0,42));
         SpawnEnemy("shrieker", new Vector3(25,0,66), new Vector3(68,0,-54));
+        SpawnEnemy("shrieker", new Vector3(40,-32,18), new Vector3(68,-32,47));
+        SpawnEnemy("shrieker", new Vector3(-47,-19.7f,88), new Vector3(-44,-19.7f,91));
     }
 
     // Update is called once per frame
