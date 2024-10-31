@@ -46,8 +46,7 @@ public class InteractionController : MonoBehaviour
 
     void Awake()
     {
-        // Ensure this object persists across scenes
-        DontDestroyOnLoad(gameObject);
+
     }
 
     void Start()
@@ -82,6 +81,16 @@ public class InteractionController : MonoBehaviour
 
     void Update()
     {
+        // Check if the note is currently open
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (notePanel.activeSelf)
+            {
+                CloseNote();
+                return;
+            }
+        }
+
         // Handle key inputs outside of SphereCast interactions
         if (Input.GetKeyDown(KeyCode.V))
         {

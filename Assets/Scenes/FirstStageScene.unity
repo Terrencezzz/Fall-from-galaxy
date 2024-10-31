@@ -18389,7 +18389,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246475828207725030, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Intensity
-      value: 0
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 8802300981589816706, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Name
@@ -52224,9 +52224,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 296389546}
     - target: {fileID: 291518681834531533, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: doorInteractions.Array.data[0].requiredNotes
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 291518681834531533, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: doorInteractions.Array.data[0].objectToDelete
       value: 
       objectReference: {fileID: 1839454826}
+    - target: {fileID: 291518681834531533, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: doorInteractions.Array.data[0].requiredRobots
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1224911017670993265, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: autoGunActive
       value: 1
@@ -52303,6 +52311,10 @@ PrefabInstance:
       propertyPath: RobotCountText
       value: 
       objectReference: {fileID: 690440968}
+    - target: {fileID: 2572263711775789618, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
+      propertyPath: wayfinderPrefab
+      value: 
+      objectReference: {fileID: 8072416818113647562, guid: 39008ef4472ba6f409d52d8f96f74da6, type: 3}
     - target: {fileID: 2572263711775789618, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: interactionController
       value: 
@@ -52417,7 +52429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7611689207371090990, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Intensity
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7931917380846123933, guid: 25f5cc41dbbdff642967d486e7d7021f, type: 3}
       propertyPath: m_Name
@@ -59350,7 +59362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7246475828207725030, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Intensity
-      value: 0
+      value: 2.98
       objectReference: {fileID: 0}
     - target: {fileID: 8802300981589816706, guid: c476b11004b957f4da361250f9b88405, type: 3}
       propertyPath: m_Name
@@ -66160,7 +66172,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10891694, guid: 5f8552cfeac0c29428f4d3d1362bacae, type: 3}
       propertyPath: m_Intensity
-      value: 0
+      value: 2.98
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
