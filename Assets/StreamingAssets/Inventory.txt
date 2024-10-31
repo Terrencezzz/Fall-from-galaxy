@@ -1,0 +1,4 @@
+robotCount=2
+noteCount=15
+ammoCount=42
+hasGun=False

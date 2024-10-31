@@ -1,6 +1,16 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
+
+[System.Serializable]
+public class DoorInteraction
+{
+    public GameObject doorObject;       // The door GameObject in the scene
+    public GameObject objectToDelete;   // The associated object to delete (e.g., the door itself)
+    public int requiredRobots = 0;      // Robots required to open the door
+    public int requiredNotes = 0;       // Notes required to open the door
+}
 
 public class InteractionController : MonoBehaviour
 {
@@ -9,75 +19,76 @@ public class InteractionController : MonoBehaviour
     public float sphereRadius = 0.5f;
     public LayerMask interactLayerMask;
 
-    // UI Elements
     [Header("UI Elements")]
     public Canvas mainCanvas;
-    public GameObject interactPrompt;       // The GameObject containing the prompt text
-    public TextMeshProUGUI interactPromptText;  // The TextMeshPro component displaying the prompt
-    public GameObject notePanel;            // The panel that displays the note content
-    public TextMeshProUGUI noteText;        // The TextMeshPro component displaying the note content
-    public GameObject messagePanel;         // The panel for displaying messages
-    public TextMeshProUGUI messageText;     // The TextMeshPro component displaying messages
+    public GameObject interactPrompt;               // The GameObject containing the prompt text
+    public TextMeshProUGUI interactPromptText;      // The TextMeshPro component displaying the prompt
+    public GameObject messagePanel;                 // The panel for displaying messages
+    public TextMeshProUGUI messageText;             // The TextMeshPro component displaying messages
+    public GameObject notePanel;                    // The panel that displays the note content
+    public TextMeshProUGUI noteText;                // The TextMeshPro component displaying the note content
 
-    // Internal variables
-    private bool isReadingNote = false;
-    private Camera cam;
-
-    // Inventory counts
+    [Header("Inventory")]
     public int robotCount = 0;
     public int noteCount = 0;
     public int ammoCount = 0;
     public bool hasGun = false;
 
+    [Header("Door Interactions")]
+    public List<DoorInteraction> doorInteractions; // List of doors and their requirements
+
+    [Header("Reactor Interaction")]
+    public GameObject reactorObject;    // The reactor GameObject in the scene
+    public string finishSceneName = "Finish"; // Name of the Finish scene
+
     // Reference to GunScript
     private GunScript gunScript;
 
-    // Door requirements
-    [Header("Door Requirements")]
-    public int requiredRobots = 0;
-    public int requiredNotes = 0;
+    void Awake()
+    {
+        // Ensure this object persists across scenes
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
-        cam = GetComponentInChildren<Camera>();
-        if (cam == null)
+        // Initialize Camera
+        Camera playerCamera = GetComponentInChildren<Camera>();
+        if (playerCamera == null)
         {
-            Debug.Log("InteractionController: Camera not found in children.");
+            Debug.LogError("InteractionController: No Camera found in children. Please ensure a Camera component is attached to a child object.");
         }
 
-        // Ensure all UI elements are assigned
-        if (mainCanvas == null)
-            Debug.Log("InteractionController: MainCanvas is not assigned.");
-        if (interactPrompt == null || interactPromptText == null)
-            Debug.Log("InteractionController: InteractPrompt or its Text component is not assigned.");
-        if (notePanel == null || noteText == null)
-            Debug.Log("InteractionController: NotePanel or its Text component is not assigned.");
-        if (messagePanel == null || messageText == null)
-            Debug.Log("InteractionController: MessagePanel or its Text component is not assigned.");
-
-        // Initially disable UI elements
-        interactPrompt.SetActive(false);
-        notePanel.SetActive(false);
-        messagePanel.SetActive(false);
-
-        // Get reference to GunScript
+        // Assign GunScript
         gunScript = GetComponentInChildren<GunScript>();
         if (gunScript == null)
         {
             Debug.LogError("InteractionController: GunScript not found in children.");
         }
+
+        // Ensure all UI elements are assigned
+        if (interactPrompt == null || interactPromptText == null)
+            Debug.LogError("InteractionController: InteractPrompt or its Text component is not assigned.");
+        if (messagePanel == null || messageText == null)
+            Debug.LogError("InteractionController: MessagePanel or its Text component is not assigned.");
+        if (notePanel == null || noteText == null)
+            Debug.LogError("InteractionController: NotePanel or its Text component is not assigned.");
+
+        // Initially disable UI elements
+        interactPrompt.SetActive(false);
+        messagePanel.SetActive(false);
+        notePanel.SetActive(false);
     }
 
     void Update()
     {
-        if (isReadingNote)
+        // Handle key inputs outside of SphereCast interactions
+        if (Input.GetKeyDown(KeyCode.V))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-                CloseNote();
-            return;
+            ActivateWayfinder();
         }
 
-        Ray ray = new Ray(cam.transform.position, cam.transform.forward);
+        Ray ray = new Ray(transform.position, transform.forward);
         RaycastHit hit;
 
         if (Physics.SphereCast(ray, sphereRadius, out hit, interactDistance, interactLayerMask))
@@ -112,15 +123,11 @@ public class InteractionController : MonoBehaviour
                     break;
 
                 case "Door":
-                    ShowInteractPrompt("Press E to open door");
-                    if (Input.GetKeyDown(KeyCode.E))
-                        OpenDoor(hitObject);
+                    HandleDoorInteraction(hitObject);
                     break;
 
                 case "Reactor":
-                    ShowInteractPrompt("Press E to interact");
-                    if (Input.GetKeyDown(KeyCode.E))
-                        InteractWithReactor();
+                    HandleReactorInteraction(hitObject);
                     break;
 
                 default:
@@ -130,6 +137,81 @@ public class InteractionController : MonoBehaviour
         }
         else
         {
+            HideInteractPrompt();
+        }
+    }
+
+    void HandleDoorInteraction(GameObject doorObject)
+    {
+        DoorInteraction doorInteraction = doorInteractions.Find(d => d.doorObject == doorObject);
+
+        if (doorInteraction != null)
+        {
+            ShowInteractPrompt("Press E to open door");
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                bool robotsEnough = robotCount >= doorInteraction.requiredRobots;
+                bool notesEnough = noteCount >= doorInteraction.requiredNotes;
+
+                if (robotsEnough && notesEnough)
+                {
+                    // Requirements met, open the door
+                    Destroy(doorInteraction.objectToDelete);
+                    DisplayMessage("Door opened", 2f);
+                }
+                else
+                {
+                    // Requirements not met, show message
+                    int robotsNeeded = doorInteraction.requiredRobots - robotCount;
+                    int notesNeeded = doorInteraction.requiredNotes - noteCount;
+                    string message = "Collect ";
+
+                    if (robotsNeeded > 0)
+                        message += $"{robotsNeeded} more robot(s) ";
+
+                    if (notesNeeded > 0)
+                        message += $"{notesNeeded} more log(s) ";
+
+                    message += "to open";
+
+                    DisplayMessage(message, 2f);
+                }
+            }
+        }
+        else
+        {
+            // Door not in the list, treat as a regular door or ignore
+            Debug.LogWarning($"InteractionController: Door {doorObject.name} not found in doorInteractions list.");
+            ShowInteractPrompt("Press E to open door");
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Destroy(doorObject);
+                DisplayMessage("Door opened", 2f);
+            }
+        }
+    }
+
+    void HandleReactorInteraction(GameObject reactor)
+    {
+        if (reactor == reactorObject)
+        {
+            ShowInteractPrompt("Press E to Blow up reactor and destroy ship");
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // Perform any required actions before loading the finish scene
+                Destroy(reactor);
+
+                // Optionally, play an explosion effect or animation here
+
+                // Load the finish scene
+                SceneManager.LoadScene(finishSceneName);
+            }
+        }
+        else
+        {
+            Debug.LogWarning($"InteractionController: Reactor {reactor.name} does not match the assigned reactorObject.");
             HideInteractPrompt();
         }
     }
@@ -154,7 +236,7 @@ public class InteractionController : MonoBehaviour
         robotCount++;
         Destroy(robot);
         Debug.Log("Robot collected. Total robots: " + robotCount);
-        DisplayMessage("Robot collected");
+        DisplayMessage("Robot collected", 2f);
         UpdateInventoryCount("Robot", robotCount);
     }
 
@@ -163,7 +245,7 @@ public class InteractionController : MonoBehaviour
         ammoCount += 10; // Assuming each crate gives 10 ammo
         Destroy(ammoCrate);
         Debug.Log("Ammo collected. Total ammo: " + ammoCount);
-        DisplayMessage("Ammo collected");
+        DisplayMessage("Ammo collected", 2f);
         UpdateInventoryCount("Ammo", ammoCount);
     }
 
@@ -175,26 +257,21 @@ public class InteractionController : MonoBehaviour
             return;
         }
 
-        isReadingNote = true;
-
-        if (notePanel != null && noteText != null)
-        {
-            notePanel.SetActive(true);
-            noteText.text = note.noteContent;
-        }
-
-        HideInteractPrompt();
+        notePanel.SetActive(true);
+        noteText.text = note.noteContent;
 
         // Disable player control
-        var playerController = GetComponentInParent<CharacterControllerBase>();
+        PlayerController playerController = FindObjectOfType<PlayerController>();
         if (playerController != null)
             playerController.EnableControl(false);
+        else
+            Debug.LogError("InteractionController: PlayerController not found.");
 
         // Unlock cursor
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        // Destroy the note object (collecting it)
+        // Increment note count and destroy the note object
         noteCount++;
         Destroy(noteObject);
         UpdateInventoryCount("Note", noteCount);
@@ -202,15 +279,14 @@ public class InteractionController : MonoBehaviour
 
     void CloseNote()
     {
-        isReadingNote = false;
-
-        if (notePanel != null)
-            notePanel.SetActive(false);
+        notePanel.SetActive(false);
 
         // Enable player control
-        var playerController = GetComponentInParent<CharacterControllerBase>();
+        PlayerController playerController = FindObjectOfType<PlayerController>();
         if (playerController != null)
             playerController.EnableControl(true);
+        else
+            Debug.LogError("InteractionController: PlayerController not found.");
 
         // Lock cursor
         Cursor.lockState = CursorLockMode.Locked;
@@ -244,53 +320,6 @@ public class InteractionController : MonoBehaviour
         DisplayMessage("Gun collected", 2f);
     }
 
-    void OpenDoor(GameObject doorObject)
-    {
-        // Door opening logic without using a Door class
-
-        // Door requirements (can be set per door using custom properties or defaults)
-        int doorRequiredRobots = requiredRobots;
-        int doorRequiredNotes = requiredNotes;
-
-        // Optionally, get custom requirements from the door object
-        DoorRequirements doorReq = doorObject.GetComponent<DoorRequirements>();
-        if (doorReq != null)
-        {
-            doorRequiredRobots = doorReq.requiredRobots;
-            doorRequiredNotes = doorReq.requiredNotes;
-        }
-
-        // Check if player meets the requirements
-        if (robotCount >= doorRequiredRobots && noteCount >= doorRequiredNotes)
-        {
-            // Open the door (e.g., destroy the door object or play an animation)
-            Destroy(doorObject);
-            DisplayMessage("Door opened", 2f);
-        }
-        else
-        {
-            string message = "Find ";
-
-            if (robotCount < doorRequiredRobots)
-                message += $"{doorRequiredRobots - robotCount} more robot(s) ";
-
-            if (noteCount < doorRequiredNotes)
-                message += $"{doorRequiredNotes - noteCount} more note(s) ";
-
-            message += "to continue";
-
-            DisplayMessage(message, 2f);
-        }
-    }
-
-    void InteractWithReactor()
-    {
-        Debug.Log("Interacting with reactor...");
-        DisplayMessage("Interacting with reactor...");
-        // Load the next scene or perform other actions
-        SceneManager.LoadScene("ReactorScene"); // Replace with your scene name
-    }
-
     void DisplayMessage(string message, float duration = 2f)
     {
         if (messagePanel != null && messageText != null)
@@ -312,5 +341,11 @@ public class InteractionController : MonoBehaviour
     {
         // Update your inventory UI or data here
         Debug.Log($"{itemType} count updated: {count}");
+    }
+
+    private void ActivateWayfinder()
+    {
+        // Functionality to be implemented (handled in PlayerController)
+        // Placeholder for future expansions
     }
 }

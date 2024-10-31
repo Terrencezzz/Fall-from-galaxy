@@ -1,4 +1,4 @@
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,12 +8,31 @@ public class PlayerController : CharacterControllerBase
     public int health = 200;
     public bool isHand = true;
     private bool stop = false;
+    private int maxHealth = 200;
 
+    [Header("UI Elements")]
     public TextMeshProUGUI healthText;
-    public TextMeshProUGUI LogText;
-    public TextMeshProUGUI AmmoText;
+    public TextMeshProUGUI ammoText;
+    public TextMeshProUGUI robotText;
+    public TextMeshProUGUI noteText;
 
     public InteractionController interactionController;
+
+    // Maximum values
+    private int maxRobots = 3;
+    private int maxNotes = 24;
+
+    [Header("Wayfinder Settings")]
+    public GameObject wayfinderPrefab; // Assign in the Inspector
+
+    protected override void Start()
+    {
+        base.Start(); // Ensure base Start() is called
+
+        // Ensure health starts at maxHealth
+        health = maxHealth;
+        UpdateHealthUI(); // Update UI at the start
+    }
 
     protected override void Update()
     {
@@ -24,15 +43,28 @@ public class PlayerController : CharacterControllerBase
 
         // Update UI elements
         UpdateHealthUI();
-        UpdateLogText();
-        UpdateAmmoText();
+        UpdateAmmoUI();
+        UpdateRobotUI();
+        UpdateNoteUI();
 
         // Check for game over condition
         CheckGameOver();
+
+        // Handle Wayfinder activation
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ActivateWayfinder();
+        }
     }
 
     protected override void MoveCharacter()
     {
+        if (cameraTransform == null || controller == null)
+        {
+            Debug.LogError("PlayerController: cameraTransform or controller is not assigned.");
+            return;
+        }
+
         float moveX = Input.GetAxis("Horizontal");
         float moveZ = Input.GetAxis("Vertical");
 
@@ -73,17 +105,81 @@ public class PlayerController : CharacterControllerBase
 
     public void UpdateHealthUI()
     {
-        healthText.text = "Health: " + (200 + health).ToString();
+        if (healthText != null)
+        {
+            string heartEmoji = "♥";
+            int barLength = 20; // Total number of '|' characters
+            int filledLength = Mathf.Clamp(Mathf.CeilToInt((float)health / maxHealth * barLength), 0, barLength);
+            string healthBar = new string('|', filledLength).PadRight(barLength, ' ');
+
+            healthText.text = $"Health\n{heartEmoji} [{healthBar}] {health}/{maxHealth}";
+        }
+        else
+        {
+            Debug.LogWarning("HealthText UI element is not assigned.");
+        }
     }
 
-    public void UpdateLogText()
+    public void UpdateAmmoUI()
     {
-        LogText.text = "Notes collected: " + interactionController.noteCount.ToString();
+        if (ammoText != null && interactionController != null)
+        {
+            string ammoEmoji = "";
+            ammoText.text = $"Ammo\n{ammoEmoji} x {interactionController.ammoCount}";
+        }
+        else
+        {
+            if (ammoText == null)
+                Debug.LogWarning("AmmoText UI element is not assigned.");
+            if (interactionController == null)
+                Debug.LogWarning("InteractionController is not assigned.");
+        }
     }
 
-    public void UpdateAmmoText()
+    public void UpdateRobotUI()
     {
-        AmmoText.text = "Ammo: " + interactionController.ammoCount.ToString();
+        if (robotText != null && interactionController != null)
+        {
+            string robotEmoji = "";
+            int robotCount = interactionController.robotCount;
+
+            // Build the robot slots
+            string robotSlots = "<";
+            for (int i = 0; i < maxRobots; i++)
+            {
+                robotSlots += i < robotCount ? "|" : " ";
+            }
+            robotSlots += ">";
+
+            robotText.text = $"Robots\n{robotEmoji} {robotSlots}";
+        }
+        else
+        {
+            if (robotText == null)
+                Debug.LogWarning("RobotText UI element is not assigned.");
+            if (interactionController == null)
+                Debug.LogWarning("InteractionController is not assigned.");
+        }
+    }
+
+    public void UpdateNoteUI()
+    {
+        if (noteText != null && interactionController != null)
+        {
+            string noteEmoji = "";
+            int barLength = 20; // Total number of '|' characters
+            int filledLength = Mathf.Clamp(Mathf.CeilToInt((float)interactionController.noteCount / maxNotes * barLength), 0, barLength);
+            string noteBar = new string('|', filledLength).PadRight(barLength, ' ');
+
+            noteText.text = $"Notes\n{noteEmoji} [{noteBar}] {interactionController.noteCount}/{maxNotes}";
+        }
+        else
+        {
+            if (noteText == null)
+                Debug.LogWarning("NoteText UI element is not assigned.");
+            if (interactionController == null)
+                Debug.LogWarning("InteractionController is not assigned.");
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -106,12 +202,40 @@ public class PlayerController : CharacterControllerBase
 
     private void CheckGameOver()
     {
-        if (health <= -200)
+        if (health <= 0)
         {
             stop = true;
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            SceneManager.LoadSceneAsync(3); // Ensure scene index 3 is correct
+
+            // Display glitchy "DEAD" text
+            if (healthText != null)
+            {
+                string deadText = "DEAD";
+                healthText.text = deadText;
+            }
+
+            // Delay before loading game over scene to allow player to see the "DEAD" text
+            StartCoroutine(LoadGameOverSceneWithDelay(2f)); // 2-second delay
+        }
+    }
+
+    private System.Collections.IEnumerator LoadGameOverSceneWithDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadSceneAsync(3); // Ensure scene index 3 is correct
+    }
+
+    private void ActivateWayfinder()
+    {
+        if (wayfinderPrefab != null)
+        {
+            Instantiate(wayfinderPrefab, transform.position, Quaternion.identity);
+            Debug.Log("Wayfinder activated.");
+        }
+        else
+        {
+            Debug.LogError("Wayfinder prefab is not assigned in PlayerController.");
         }
     }
 }

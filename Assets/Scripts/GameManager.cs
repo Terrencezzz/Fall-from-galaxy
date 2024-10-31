@@ -39,10 +39,17 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
+        // Implement Singleton Pattern
         if (Instance == null)
+        {
             Instance = this;
+            DontDestroyOnLoad(gameObject); // Persist across scenes
+        }
         else
+        {
             Destroy(gameObject);
+            return;
+        }
     }
 
     void Start()
@@ -56,6 +63,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("GameManager: InteractionController not found in the scene.");
         }
+
+        // Ensure only the active character has AudioListener enabled
+        UpdateAudioListeners();
     }
 
     void OnValidate()
@@ -65,10 +75,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // Remove destroyed robots from the characters list
+        // Remove destroyed characters from the list
         CleanUpCharacters();
 
-        // Switch character logic (if needed)
+        // Switch character logic
         if (Input.GetKeyDown(KeyCode.Tab))
             SwitchCharacter();
 
@@ -131,20 +141,22 @@ public class GameManager : MonoBehaviour
 
     void SwitchCharacter()
     {
-        // Prevent switching to robots (if desired)
         if (characters.Count <= 1)
             return;
 
         DisableControl(characters[currentCharacterIndex]);
         currentCharacterIndex = (currentCharacterIndex + 1) % characters.Count;
 
-        // Ensure we only switch to player characters
+        // If the next character is a robot, ensure it's active
         if (characters[currentCharacterIndex].CompareTag("Robot"))
         {
-            currentCharacterIndex = (currentCharacterIndex + 1) % characters.Count;
+            // You can add additional checks or initialization here if needed
         }
 
         EnableControl(characters[currentCharacterIndex]);
+
+        // Update AudioListeners to ensure only active character has it enabled
+        UpdateAudioListeners();
     }
 
     void TrySpawnRobot()
@@ -173,23 +185,19 @@ public class GameManager : MonoBehaviour
         if (FindSpawnPosition(player.transform.position, out Vector3 spawnPosition))
         {
             GameObject newRobot = Instantiate(robotPrefab, spawnPosition, Quaternion.identity);
-
-            // Set the robot's tag to "Robot" (ensure the prefab has this tag)
             newRobot.tag = "Robot";
 
-            // Reduce the robot count in InteractionController
-            interactionController.robotCount--;
+            // Initially disable the robot's control and AudioListener
+            DisableControl(newRobot);
 
             // Add the new robot to the characters list
             characters.Add(newRobot);
 
+            // Reduce the robot count in InteractionController
+            interactionController.robotCount--;
+
             // Display "Robot deployed" message
             DisplayMessage("Robot deployed");
-
-            // Optionally, you can initialize the robot here
-            // For example, set its playerController or other components
-
-            // Do not switch the camera to the robot (keep it on the player)
         }
         else
         {
@@ -202,6 +210,16 @@ public class GameManager : MonoBehaviour
     {
         // Remove any characters that have been destroyed
         characters.RemoveAll(item => item == null);
+
+        // Ensure currentCharacterIndex is within bounds
+        if (currentCharacterIndex >= characters.Count)
+            currentCharacterIndex = 0;
+
+        // If no characters left, handle accordingly
+        if (characters.Count == 0)
+        {
+            Debug.LogWarning("No characters left in the game.");
+        }
     }
 
     bool IsGroundFlat(Vector3 position)
@@ -256,10 +274,16 @@ public class GameManager : MonoBehaviour
         if (robotController != null) robotController.enabled = isEnabled;
 
         var cam = character.GetComponentInChildren<Camera>();
-        if (cam != null) cam.enabled = isEnabled;
+        if (cam != null)
+        {
+            cam.enabled = isEnabled;
+        }
 
         var audioListener = character.GetComponentInChildren<AudioListener>();
-        if (audioListener != null) audioListener.enabled = isEnabled;
+        if (audioListener != null)
+        {
+            audioListener.enabled = isEnabled;
+        }
 
         var mouseLook = character.GetComponentInChildren<MouseLook>();
         if (mouseLook != null) mouseLook.enabled = isEnabled;
@@ -292,5 +316,20 @@ public class GameManager : MonoBehaviour
     {
         if (messageCanvas != null)
             messageCanvas.enabled = false;
+    }
+
+    /// <summary>
+    /// Updates AudioListeners to ensure only the active character has it enabled.
+    /// </summary>
+    void UpdateAudioListeners()
+    {
+        foreach (GameObject character in characters)
+        {
+            AudioListener listener = character.GetComponentInChildren<AudioListener>();
+            if (listener != null)
+            {
+                listener.enabled = (character == characters[currentCharacterIndex]);
+            }
+        }
     }
 }

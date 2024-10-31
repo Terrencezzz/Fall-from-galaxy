@@ -1,9 +1,10 @@
 fileFormatVersion: 2
-guid: 99c3f9edc24aa0d438de907e7e50d980
+guid: 5c73a7a5a15f72a4e99a07771bd7ccb2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - beepSound: {fileID: 8300000, guid: fae646e294e83b8429734823243ff0c9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

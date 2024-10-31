@@ -285,6 +285,7 @@ MonoBehaviour:
   autoGunPrefab: {fileID: 167390, guid: d263be518b43c45958a9fabf6650fd2d, type: 3}
   playerController: {fileID: 0}
   autoGunActive: 0
+  interactionController: {fileID: 0}
 --- !u!1 &3772686971444969667
 GameObject:
   m_ObjectHideFlags: 0
@@ -1325,7 +1326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd88dc559c0e92a448dd24b82cea3c74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mouseSensitivity: 200
+  mouseSensitivity: 100
 --- !u!114 &291518681834531533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1486,6 +1487,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3107701097986825008, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 660.0007
+      objectReference: {fileID: 0}
     - target: {fileID: 3415193600032406337, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
       propertyPath: m_Size
       value: 1
@@ -1601,6 +1606,22 @@ PrefabInstance:
     - target: {fileID: 7068596976265958851, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439767347206544695, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439767347206544695, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439767347206544695, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7439767347206544695, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
+      propertyPath: m_Color.r
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7547458950037912029, guid: aff4c746e4c447d4483f643a69817d3a, type: 3}
       propertyPath: m_Layer
