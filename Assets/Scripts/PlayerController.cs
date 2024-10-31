@@ -15,6 +15,7 @@ public class PlayerController : CharacterControllerBase
     public TextMeshProUGUI ammoText;
     public TextMeshProUGUI robotText;
     public TextMeshProUGUI noteText;
+    public TextMeshProUGUI wayfinderText; // Add this line
 
     public InteractionController interactionController;
 
@@ -24,6 +25,10 @@ public class PlayerController : CharacterControllerBase
 
     [Header("Wayfinder Settings")]
     public GameObject wayfinderPrefab; // Assign in the Inspector
+    public float wayfinderCooldown = 30f; // Total time for the bar to fill (modifiable in the Inspector)
+
+    private float wayfinderTimer = 0f;
+    private bool wayfinderReady = true;
 
     protected override void Start()
     {
@@ -46,6 +51,7 @@ public class PlayerController : CharacterControllerBase
         UpdateAmmoUI();
         UpdateRobotUI();
         UpdateNoteUI();
+        UpdateWayfinderUI(); // Add this line
 
         // Check for game over condition
         CheckGameOver();
@@ -54,6 +60,17 @@ public class PlayerController : CharacterControllerBase
         if (Input.GetKeyDown(KeyCode.V))
         {
             ActivateWayfinder();
+        }
+
+        // Handle Wayfinder cooldown
+        if (!wayfinderReady)
+        {
+            wayfinderTimer += Time.deltaTime;
+            if (wayfinderTimer >= wayfinderCooldown)
+            {
+                wayfinderTimer = 0f;
+                wayfinderReady = true;
+            }
         }
     }
 
@@ -182,6 +199,24 @@ public class PlayerController : CharacterControllerBase
         }
     }
 
+    public void UpdateWayfinderUI()
+    {
+        if (wayfinderText != null)
+        {
+            int barLength = 20; // Total number of '|' characters
+            int filledLength = wayfinderReady ? barLength : Mathf.Clamp(Mathf.CeilToInt((wayfinderTimer / wayfinderCooldown) * barLength), 0, barLength);
+            string wayfinderBar = new string('|', filledLength).PadRight(barLength, ' ');
+
+            string timeLeft = wayfinderReady ? "Ready" : $"{Mathf.CeilToInt(wayfinderCooldown - wayfinderTimer)}s";
+
+            wayfinderText.text = $"Wayfinder\n^ [{wayfinderBar}] {timeLeft}";
+        }
+        else
+        {
+            Debug.LogWarning("WayfinderText UI element is not assigned.");
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Next"))
@@ -228,10 +263,18 @@ public class PlayerController : CharacterControllerBase
 
     private void ActivateWayfinder()
     {
+        if (!wayfinderReady)
+        {
+            Debug.Log("Wayfinder is not ready yet.");
+            return;
+        }
+
         if (wayfinderPrefab != null)
         {
             Instantiate(wayfinderPrefab, transform.position, Quaternion.identity);
             Debug.Log("Wayfinder activated.");
+            wayfinderReady = false;
+            wayfinderTimer = 0f; // Reset the timer
         }
         else
         {
