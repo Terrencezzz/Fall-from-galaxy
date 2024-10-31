@@ -36,6 +36,11 @@ public class GameManager : MonoBehaviour
 
     // Reference to InteractionController
     private InteractionController interactionController;
+
+    // Prefabs for doors
+    public GameObject closedDoorReactor; // this needs to be dragged in from the actual scene, as we need its' position
+    public GameObject openDoorReactor; // this can be a regular open doorway prefab 
+
     
     void Awake()
     {
@@ -91,6 +96,10 @@ public class GameManager : MonoBehaviour
         {
             useAmbientLight = !useAmbientLight;
             ApplyLightingSettings();
+        }
+
+        if (interactionController.noteCount > 20) {
+            OpenDoor(closedDoorReactor, openDoorReactor);
         }
     }
 
@@ -331,5 +340,12 @@ public class GameManager : MonoBehaviour
                 listener.enabled = (character == characters[currentCharacterIndex]);
             }
         }
+    }
+    
+    // Replaces the closed door prefab with the opendoor prefab 
+    void OpenDoor(GameObject closed, GameObject open) 
+    {
+        Instantiate(open, closed.transform.position, closed.transform.rotation);
+        Destroy(closed);
     }
 }
